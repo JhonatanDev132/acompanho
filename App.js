@@ -3,10 +3,14 @@ import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
+    <>
+    <StatusBar style="auto" />
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      
+      <Text>Acompanho</Text>
+      <Text>A plataforma que acompanha seus familiares nas consultas médicas</Text>
     </View>
+    </>
   );
 }
 
