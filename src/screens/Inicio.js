@@ -1,6 +1,6 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react';
-import ilustracao from "../../assets/images/ilustracao-inicio.svg";
+import ilustracao from "../../assets/images/ilustracao-inicio.png";
 import SafeContainer from '../../src/components/SafeContainer';
 
 export default function Inicio() {
