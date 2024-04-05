@@ -3,7 +3,8 @@ import React from "react";
 import ilustracao from "../../assets/images/ilustracao-inicio.png";
 import SafeContainer from "../../src/components/SafeContainer";
 
-export default function Inicio() {
+
+export default function Inicio({navigation}) {
   return (
     <SafeContainer>
       <View style={estilos.subcontainer}>
@@ -15,7 +16,7 @@ export default function Inicio() {
         </Text>
 
         <Pressable style={estilos.botao}>
-          <Text style={estilos.textoBotao}>Início</Text>
+          <Text style={estilos.textoBotao} onPress={() => navigation.navigate("Procurar")}>Início</Text>
         </Pressable>
       </View>
     </SafeContainer>
@@ -25,22 +26,23 @@ export default function Inicio() {
 const estilos = StyleSheet.create({
   subcontainer: {
     alignItems: "center",
+    gap: 10
   },
   titulo: {
     fontSize: 42,
     fontFamily: "Montserrat",
+    fontWeight: "700",
     letterSpacing: 1,
     marginBottom: 8,
   },
   texto: {
-    fontSize: 20,
+    fontSize: 18,
     textAlign: "center",
     fontFamily: "Montserrat",
     marginBottom: 16,
     paddingHorizontal: 30,
   },
   botao: {
-    marginTop: 40,
     backgroundColor: "#6D9DC5",
     padding: 15,
     borderRadius: 40,
