@@ -40,14 +40,14 @@ export default function Login({ navigation }) {
 
 const estilos = StyleSheet.create({
   logo: {
-    width: 130,
-    height: 100,
+    width: 167,
+    height: 130,
   },
   login: {
     fontSize: 30,
     fontWeight: "bold",
     marginBottom: 30,
-    margin: 30,
+    margin: 23,
   },
   input: {
     backgroundColor: "white",
@@ -60,10 +60,6 @@ const estilos = StyleSheet.create({
   formulario: {
     marginVertical: 16,
     width: "80%",
-  },
-  icon: {
-    width: 40,
-    height: 40,
   },
   botao: {
     backgroundColor: "#6D9DC5",
@@ -78,8 +74,7 @@ const estilos = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-    margin: 20,
-    width: 200,
+    margin: 15,
   },
   textoBotao: {
     fontSize: 24,

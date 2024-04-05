@@ -3,7 +3,7 @@ import React from "react";
 import ilustracao from "../../assets/images/ilustracao-inicio.png";
 import SafeContainer from "../../src/components/SafeContainer";
 
-export default function Inicio() {
+export default function Inicio({ navigation }) {
   return (
     <SafeContainer>
       <View style={estilos.subcontainer}>
@@ -14,7 +14,10 @@ export default function Inicio() {
           A plataforma que acompanha seus familiares nas consultas médicas.
         </Text>
 
-        <Pressable style={estilos.botao}>
+        <Pressable
+          onPress={() => navigation.navigate("Escolha")}
+          style={estilos.botao}
+        >
           <Text style={estilos.textoBotao}>Início</Text>
         </Pressable>
       </View>
@@ -27,13 +30,13 @@ const estilos = StyleSheet.create({
     alignItems: "center",
   },
   titulo: {
-    fontSize: 42,
+    fontSize: 38,
     fontFamily: "Montserrat",
     letterSpacing: 1,
     marginBottom: 8,
   },
   texto: {
-    fontSize: 20,
+    fontSize: 16,
     textAlign: "center",
     fontFamily: "Montserrat",
     marginBottom: 16,
