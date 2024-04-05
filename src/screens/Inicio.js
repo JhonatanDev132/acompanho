@@ -3,12 +3,7 @@ import React from "react";
 import ilustracao from "../../assets/images/ilustracao-inicio.png";
 import SafeContainer from "../../src/components/SafeContainer";
 
-<<<<<<< HEAD
 export default function Inicio({ navigation }) {
-=======
-
-export default function Inicio({navigation}) {
->>>>>>> 6053979726fc6de91ae4c0dfb07de28462c50fc9
   return (
     <SafeContainer>
       <View style={estilos.subcontainer}>
@@ -18,17 +13,18 @@ export default function Inicio({navigation}) {
         <Text style={estilos.texto}>
           A plataforma que acompanha seus familiares nas consultas médicas.
         </Text>
-
-<<<<<<< HEAD
         <Pressable
           onPress={() => navigation.navigate("Escolha")}
           style={estilos.botao}
-        >
-          <Text style={estilos.textoBotao}>Início</Text>
-=======
+        />
+        <Text style={estilos.textoBotao}>Início</Text>
         <Pressable style={estilos.botao}>
-          <Text style={estilos.textoBotao} onPress={() => navigation.navigate("Procurar")}>Início</Text>
->>>>>>> 6053979726fc6de91ae4c0dfb07de28462c50fc9
+          <Text
+            style={estilos.textoBotao}
+            onPress={() => navigation.navigate("Procurar")}
+          >
+            Início
+          </Text>
         </Pressable>
       </View>
     </SafeContainer>
@@ -38,7 +34,7 @@ export default function Inicio({navigation}) {
 const estilos = StyleSheet.create({
   subcontainer: {
     alignItems: "center",
-    gap: 10
+    gap: 10,
   },
   titulo: {
     fontSize: 38,
@@ -48,11 +44,7 @@ const estilos = StyleSheet.create({
     marginBottom: 8,
   },
   texto: {
-<<<<<<< HEAD
     fontSize: 16,
-=======
-    fontSize: 18,
->>>>>>> 6053979726fc6de91ae4c0dfb07de28462c50fc9
     textAlign: "center",
     fontFamily: "Montserrat",
     marginBottom: 16,
