@@ -79,6 +79,7 @@ const estilos = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
     margin: 20,
+    width: 200,
   },
   textoBotao: {
     fontSize: 24,
