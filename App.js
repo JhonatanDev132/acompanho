@@ -14,7 +14,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
+        <Stack.Navigator initialRouteName="Inicio">
           <Stack.Screen
             name="Login"
             component={Login}
@@ -23,6 +23,21 @@ export default function App() {
           <Stack.Screen
             name="Inicio"
             component={Inicio}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Procurar"
+            component={Procurar}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen 
+            name="Conectar"
+            component={Conectar}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen 
+            name="Seguranca"
+            component={Seguranca}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
