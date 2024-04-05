@@ -1,3 +1,4 @@
+import React from "react";
 import {
   StyleSheet,
   Text,
@@ -5,42 +6,49 @@ import {
   Image,
   TextInput,
   Pressable,
+  ScrollView,
 } from "react-native";
 import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
-import React from "react";
 
 export default function Login({ navigation }) {
   return (
     <SafeContainer>
-      <Image source={Icon} style={estilos.logo} />
-      <Text style={estilos.texto}>Acompanho</Text>
-      <View>
-        <Text style={estilos.login}>Login</Text>
-      </View>
-      <View style={estilos.formulario}>
-        <Text>E-mail:</Text>
-        <TextInput
-          placeholder="E-mail"
-          style={estilos.input}
-          keyboardType="email-address"
-        />
-        <Text>Senha:</Text>
-        <TextInput placeholder="Senha" style={estilos.input} secureTextEntry />
-      </View>
-      <Pressable style={estilos.botao}>
-        <Text style={estilos.textoBotao}>Entrar</Text>
-      </Pressable>
-      <Pressable onPress={() => navigation.navigate("Inicio")}>
-        <Text>Cadastrar</Text>
-      </Pressable>
+      <ScrollView contentContainerStyle={styles.scrollViewContent}>
+        <Image source={Icon} style={styles.logo} />
+        <Text style={styles.texto}>Acompanho</Text>
+        <View>
+          <Text style={styles.login}>Login</Text>
+        </View>
+        <View style={styles.formulario}>
+          <Text>E-mail:</Text>
+          <TextInput
+            placeholder="E-mail"
+            style={styles.input}
+            keyboardType="email-address"
+          />
+          <Text>Senha:</Text>
+          <TextInput placeholder="Senha" style={styles.input} secureTextEntry />
+        </View>
+        <Pressable style={styles.botao}>
+          <Text style={styles.textoBotao}>Entrar</Text>
+        </Pressable>
+        <Pressable onPress={() => navigation.navigate("Inicio")}>
+          <Text>Cadastrar</Text>
+        </Pressable>
+      </ScrollView>
     </SafeContainer>
   );
 }
 
-const estilos = StyleSheet.create({
+const styles = StyleSheet.create({
+  scrollViewContent: {
+    flexGrow: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   logo: {
-    width: 128,
+    width: 130,
     height: 100,
   },
   login: {
