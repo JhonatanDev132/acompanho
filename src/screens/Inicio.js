@@ -3,7 +3,8 @@ import React from "react";
 import ilustracao from "../../assets/images/ilustracao-inicio.png";
 import SafeContainer from "../../src/components/SafeContainer";
 
-export default function Inicio({ navigation }) {
+
+export default function Inicio({navigation}) {
   return (
     <SafeContainer>
       <View style={estilos.subcontainer}>
@@ -14,11 +15,8 @@ export default function Inicio({ navigation }) {
           A plataforma que acompanha seus familiares nas consultas médicas.
         </Text>
 
-        <Pressable
-          onPress={() => navigation.navigate("Escolha")}
-          style={estilos.botao}
-        >
-          <Text style={estilos.textoBotao}>Início</Text>
+        <Pressable style={estilos.botao}>
+          <Text style={estilos.textoBotao} onPress={() => navigation.navigate("Procurar")}>Início</Text>
         </Pressable>
       </View>
     </SafeContainer>
@@ -28,22 +26,23 @@ export default function Inicio({ navigation }) {
 const estilos = StyleSheet.create({
   subcontainer: {
     alignItems: "center",
+    gap: 10
   },
   titulo: {
-    fontSize: 38,
+    fontSize: 42,
     fontFamily: "Montserrat",
+    fontWeight: "700",
     letterSpacing: 1,
     marginBottom: 8,
   },
   texto: {
-    fontSize: 16,
+    fontSize: 18,
     textAlign: "center",
     fontFamily: "Montserrat",
     marginBottom: 16,
     paddingHorizontal: 30,
   },
   botao: {
-    marginTop: 40,
     backgroundColor: "#6D9DC5",
     padding: 15,
     borderRadius: 40,
