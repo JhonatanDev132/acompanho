@@ -14,12 +14,8 @@ export default function Inicio({ navigation }) {
           A plataforma que acompanha seus familiares nas consultas médicas.
         </Text>
         <Pressable
+          style={estilos.botao}
           onPress={() => navigation.navigate("Escolha")}
-          style={estilos.botao}
-        />
-        <Pressable
-          style={estilos.botao}
-          onPress={() => navigation.navigate("Procurar")}
         >
           <Text style={estilos.textoBotao}>Início</Text>
         </Pressable>
