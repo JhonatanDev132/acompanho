@@ -3,6 +3,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Inicio from "./src/screens/Inicio";
 import Login from "./src/screens/Login";
+import Procurar from "./src/screens/Procurar";
+import Conectar from "./src/screens/Conectar";
+import Seguranca from "./src/screens/Seguranca";
 
 const Stack = createNativeStackNavigator();
 
