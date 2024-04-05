@@ -1,4 +1,4 @@
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native'
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import SafeContainer from '../components/SafeContainer'
 import logoMini from '../../assets/images/logoMini.png'
@@ -11,6 +11,7 @@ import mensagem from '../../assets/images/mensagem.png'
 export default function Seguranca() {
   return (
     <SafeContainer>
+      <ScrollView>
         <View style={estilos.subcontainer}>
             <Image 
               style={estilos.logo} 
@@ -69,6 +70,7 @@ export default function Seguranca() {
               </Text>
             </Pressable>
         </View>
+        </ScrollView>
     </SafeContainer>
   )
 }
@@ -79,7 +81,7 @@ const estilos = StyleSheet.create({
         gap: 10,
     },
     logo: {
-      marginBottom: 0,
+      marginTop: 60,
       width: 60,
       height: 51
     },
@@ -112,7 +114,8 @@ const estilos = StyleSheet.create({
       shadowOpacity: 0.25,
       shadowRadius: 3.84,
       elevation: 5,
-      marginTop: 20
+      marginTop: 20,
+      marginBottom: 40
     },
     textoBotao: {
       fontSize: 24,
