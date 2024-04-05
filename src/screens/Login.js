@@ -6,42 +6,39 @@ import {
   TextInput,
   Pressable,
 } from "react-native";
-import formulario1 from "../../assets/images/formulario1.png";
-import formulario2 from "../../assets/images/formulario2.png";
 import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
 import React from "react";
 
-export default function Login() {
+export default function Login({ navigation }) {
   return (
     <SafeContainer>
       <Image source={Icon} style={estilos.logo} />
+      <Text style={estilos.texto}>Acompanho</Text>
       <View>
         <Text style={estilos.login}>Login</Text>
       </View>
-      <View style={estilos.container}>
+      <View style={estilos.formulario}>
+        <Text>E-mail:</Text>
         <TextInput
-          placeholder="Nome"
+          placeholder="E-mail"
           style={estilos.input}
-          keyboardType="default"
+          keyboardType="email-address"
         />
+        <Text>Senha:</Text>
         <TextInput placeholder="Senha" style={estilos.input} secureTextEntry />
-        <Pressable style={estilos.botao}>
-          <Text style={estilos.textoBotao}>Entrar</Text>
-        </Pressable>
-        <Pressable>
-          <Text>Cadastrar</Text>
-        </Pressable>
       </View>
+      <Pressable style={estilos.botao}>
+        <Text style={estilos.textoBotao}>Entrar</Text>
+      </Pressable>
+      <Pressable onPress={() => navigation.navigate("Inicio")}>
+        <Text>Cadastrar</Text>
+      </Pressable>
     </SafeContainer>
   );
 }
 
 const estilos = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    justifyContent: "center",
-  },
   logo: {
     width: 128,
     height: 100,
@@ -57,8 +54,11 @@ const estilos = StyleSheet.create({
     borderBottomWidth: 1.5,
     marginVertical: 8,
     padding: 8,
-    paddingHorizontal: 125,
     borderRadius: 4,
+  },
+  formulario: {
+    marginVertical: 16,
+    width: "80%",
   },
   icon: {
     width: 40,
@@ -82,5 +82,8 @@ const estilos = StyleSheet.create({
   textoBotao: {
     fontSize: 24,
     textAlign: "center",
+  },
+  texto: {
+    fontFamily: "Montserrat",
   },
 });

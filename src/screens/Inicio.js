@@ -29,18 +29,18 @@ const estilos = StyleSheet.create({
   titulo: {
     fontSize: 42,
     fontFamily: "Montserrat",
-    fontWeight: "700",
     letterSpacing: 1,
     marginBottom: 8,
   },
   texto: {
-    fontSize: 18,
+    fontSize: 20,
     textAlign: "center",
     fontFamily: "Montserrat",
     marginBottom: 16,
     paddingHorizontal: 30,
   },
   botao: {
+    marginTop: 40,
     backgroundColor: "#6D9DC5",
     padding: 15,
     borderRadius: 40,
