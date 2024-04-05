@@ -17,14 +17,11 @@ export default function Inicio({ navigation }) {
           onPress={() => navigation.navigate("Escolha")}
           style={estilos.botao}
         />
-        <Text style={estilos.textoBotao}>Início</Text>
-        <Pressable style={estilos.botao}>
-          <Text
-            style={estilos.textoBotao}
-            onPress={() => navigation.navigate("Procurar")}
-          >
-            Início
-          </Text>
+        <Pressable
+          style={estilos.botao}
+          onPress={() => navigation.navigate("Procurar")}
+        >
+          <Text style={estilos.textoBotao}>Início</Text>
         </Pressable>
       </View>
     </SafeContainer>
