@@ -46,7 +46,7 @@ const estilos = StyleSheet.create({
   login: {
     fontSize: 30,
     fontWeight: "bold",
-    margin: 50,
+    margin: 45,
   },
   input: {
     backgroundColor: "white",
@@ -85,5 +85,6 @@ const estilos = StyleSheet.create({
   },
   texto: {
     fontFamily: "Montserrat",
+    fontSize: 20,
   },
 });
