@@ -23,7 +23,7 @@ export default function SafeContainer({ children }) {
 
   return (
     <SafeAreaView style={estilos.container} onLayout={aoAtualizarLayout}>
-      <LinearGradient colors={["#F4FAFE", "#ADC1D1"]} style={estilos.gradient}>
+      <LinearGradient colors={["#ADC1D1", "#F4FAFE"]} style={estilos.gradient}>
         {children}
       </LinearGradient>
     </SafeAreaView>

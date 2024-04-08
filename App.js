@@ -7,7 +7,7 @@ import Procurar from "./src/screens/Procurar";
 import Conectar from "./src/screens/Conectar";
 import Seguranca from "./src/screens/Seguranca";
 import Escolha from "./src/screens/Escolha";
-import Bemvindo from "./src/screens/Bemvindo";
+import Inicadastro from "./src/screens/Inicadastro";
 import Cadastro from "./src/screens/Cadastro";
 
 const Stack = createNativeStackNavigator();
@@ -49,8 +49,8 @@ export default function App() {
             options={{ headerShown: false }}
           />
           <Stack.Screen
-            name="Bemvindo"
-            component={Bemvindo}
+            name="Inicadastro"
+            component={Inicadastro}
             options={{ headerShown: false }}
           />
           <Stack.Screen

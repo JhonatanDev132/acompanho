@@ -15,18 +15,18 @@ export default function Escolha({ navigation }) {
     <SafeContainer>
       <View style={estilos.container}>
         <View>
-          <Text style={estilos.texto}>Concluir a inscrição</Text>
+          <Text style={estilos.texto}>Nos fale sobre você!</Text>
         </View>
         <Pressable
           style={estilos.botao}
-          onPress={() => navigation.navigate("Bemvindo")}
+          onPress={() => navigation.navigate("Inicadastro")}
         >
           <Text style={estilos.textoBotao}>Sou um cuidador</Text>
         </Pressable>
         <Text style={{ fontWeight: "bold" }}>Ou</Text>
         <Pressable
           style={estilos.botao}
-          onPress={() => navigation.navigate("Bemvindo")}
+          onPress={() => navigation.navigate("Inicadastro")}
         >
           <Text style={estilos.textoBotao}>Estou à procura de um cuidador</Text>
         </Pressable>

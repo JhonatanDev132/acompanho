@@ -10,14 +10,14 @@ import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
 import React from "react";
 
-export default function Bemvindo({ navigation }) {
+export default function Inicadastro({ navigation }) {
   return (
     <SafeContainer>
       <Image source={Icon} style={estilos.logo} />
-      <Text style={estilos.subtitle}>Bem-vindo à Acompanho</Text>
-      <Text style={estilos.texto}>Dê início ao seu cadastro!</Text>
+      <Text style={estilos.subtitle}>Dê início ao seu cadastro!</Text>
+      <Text style={estilos.texto}>Nos informe seu e-mail para começarmos</Text>
       <View style={estilos.formulario}>
-        <Text>E-mail:</Text>
+        <Text>E-mail</Text>
         <TextInput
           placeholder="E-mail"
           style={estilos.input}
@@ -41,10 +41,11 @@ const estilos = StyleSheet.create({
   },
   subtitle: {
     fontFamily: "Montserrat",
-    fontSize: 31,
+    fontSize: 30,
     fontWeight: "500",
     marginBottom: 35,
     margin: 23,
+    textAlign: "center",
   },
   input: {
     backgroundColor: "white",
@@ -80,5 +81,7 @@ const estilos = StyleSheet.create({
   texto: {
     fontSize: 20,
     marginVertical: 10,
+    marginHorizontal: 11,
+    textAlign: "center",
   },
 });

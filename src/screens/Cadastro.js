@@ -30,15 +30,9 @@ export default function Cadastro({ navigation }) {
         />
         <Text>Senha</Text>
         <TextInput placeholder="Senha" style={estilos.input} secureTextEntry />
-        <Text>Confirmar senha</Text>
-        <TextInput
-          placeholder="Confirmar senha"
-          style={estilos.input}
-          secureTextEntry
-        />
       </View>
       <Pressable style={estilos.botao}>
-        <Text style={estilos.textoBotao}>Continuar</Text>
+        <Text style={estilos.textoBotao}>Cadastro</Text>
       </Pressable>
     </SafeContainer>
   );

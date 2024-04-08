@@ -18,13 +18,13 @@ export default function Login({ navigation }) {
         <Text style={estilos.texto}>Acompanho</Text>
       </View>
       <View style={estilos.formulario}>
-        <Text>E-mail:</Text>
+        <Text>E-mail</Text>
         <TextInput
           placeholder="E-mail"
           style={estilos.input}
           keyboardType="email-address"
         />
-        <Text>Senha:</Text>
+        <Text>Senha</Text>
         <TextInput placeholder="Senha" style={estilos.input} secureTextEntry />
       </View>
       <Pressable style={estilos.botao}>
