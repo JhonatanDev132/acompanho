@@ -1,4 +1,5 @@
-import { StyleSheet, Text,r View, Pressable } from "react-native";
+import { StyleSheet, Text, View, Pressable } from "react-native";
+
 import SafeContainer from "../components/SafeContainer";
 import React from "react";
 
