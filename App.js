@@ -19,7 +19,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="TelaDeResposta">
+        <Stack.Navigator initialRouteName="Aceitar">
           <Stack.Screen
             name="Login"
             component={Login}
