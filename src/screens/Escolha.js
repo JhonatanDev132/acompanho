@@ -14,7 +14,6 @@ import React from "react";
 export default function Escolha({ navigation }) {
   return (
     <SafeContainer>
-      <Image source={Icon} style={estilos.logo} />
       <View>
         <Text style={estilos.texto}>Concluir a inscrição</Text>
       </View>
@@ -37,10 +36,6 @@ export default function Escolha({ navigation }) {
 }
 
 const estilos = StyleSheet.create({
-  logo: {
-    width: 130,
-    height: 100,
-  },
   texto: {
     marginVertical: 30,
     fontSize: 18,
@@ -48,9 +43,9 @@ const estilos = StyleSheet.create({
     fontFamily: "Montserrat",
   },
   ilustracao: {
-    width: 125,
+    width: 130,
     height: 160,
-    marginTop: 18,
+    marginTop: 20,
   },
   botao: {
     backgroundColor: "#6D9DC5",
