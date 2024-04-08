@@ -36,7 +36,7 @@ const estilos = StyleSheet.create({
   titulo: {
     fontSize: 38,
     fontFamily: "Montserrat",
-    fontWeight: "700",
+    fontWeight: "500",
     letterSpacing: 1,
     marginBottom: 8,
   },

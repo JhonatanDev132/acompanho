@@ -6,18 +6,16 @@ import {
   TextInput,
   Pressable,
 } from "react-native";
-import IconMini from "../../assets/images/logoMini.png";
+import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
 import React from "react";
 
 export default function Bemvindo({ navigation }) {
   return (
     <SafeContainer>
-      <Image source={IconMini} />
+      <Image source={Icon} style={estilos.logo} />
       <Text style={estilos.subtitle}>Bem-vindo à Acompanho</Text>
-      <View>
-        <Text style={estilos.texto}>Faça o login ou cadastre-se</Text>
-      </View>
+      <Text style={estilos.texto}>Dê início ao seu cadastro!</Text>
       <View style={estilos.formulario}>
         <Text>E-mail:</Text>
         <TextInput
@@ -26,7 +24,10 @@ export default function Bemvindo({ navigation }) {
           keyboardType="email-address"
         />
       </View>
-      <Pressable style={estilos.botao}>
+      <Pressable
+        style={estilos.botao}
+        onPress={() => navigation.navigate("Cadastro")}
+      >
         <Text style={estilos.textoBotao}>Continuar</Text>
       </Pressable>
     </SafeContainer>
@@ -34,7 +35,12 @@ export default function Bemvindo({ navigation }) {
 }
 
 const estilos = StyleSheet.create({
+  logo: {
+    width: 90,
+    height: 70,
+  },
   subtitle: {
+    fontFamily: "Montserrat",
     fontSize: 31,
     fontWeight: "500",
     marginBottom: 35,
@@ -49,7 +55,7 @@ const estilos = StyleSheet.create({
     borderRadius: 4,
   },
   formulario: {
-    marginVertical: 16,
+    marginVertical: 15,
     width: "80%",
   },
   botao: {

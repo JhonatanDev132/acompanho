@@ -10,28 +10,35 @@ import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
 import React from "react";
 
-export default function Login({ navigation }) {
+export default function Cadastro({ navigation }) {
   return (
     <SafeContainer>
-      <View style={estilos.logo}>
-        <Image source={Icon} style={estilos.image} />
-        <Text style={estilos.texto}>Acompanho</Text>
-      </View>
+      <Image source={Icon} style={estilos.logo} />
+      <Text style={estilos.subtitle}>Cadastre-se!</Text>
       <View style={estilos.formulario}>
-        <Text>E-mail:</Text>
+        <Text>Nome</Text>
         <TextInput
-          placeholder="E-mail"
+          placeholder="Nome"
           style={estilos.input}
-          keyboardType="email-address"
+          keyboardType="default"
         />
-        <Text>Senha:</Text>
+        <Text>Sobrenome</Text>
+        <TextInput
+          placeholder="Sobrenome"
+          style={estilos.input}
+          keyboardType="default"
+        />
+        <Text>Senha</Text>
         <TextInput placeholder="Senha" style={estilos.input} secureTextEntry />
+        <Text>Confirmar senha</Text>
+        <TextInput
+          placeholder="Confirmar senha"
+          style={estilos.input}
+          secureTextEntry
+        />
       </View>
       <Pressable style={estilos.botao}>
-        <Text style={estilos.textoBotao}>Entrar</Text>
-      </Pressable>
-      <Pressable onPress={() => navigation.navigate("Inicio")}>
-        <Text>Cadastrar</Text>
+        <Text style={estilos.textoBotao}>Continuar</Text>
       </Pressable>
     </SafeContainer>
   );
@@ -39,11 +46,15 @@ export default function Login({ navigation }) {
 
 const estilos = StyleSheet.create({
   logo: {
-    alignItems: "center",
+    width: 90,
+    height: 70,
   },
-  image: {
-    width: 166,
-    height: 130,
+  subtitle: {
+    fontFamily: "Montserrat",
+    fontSize: 31,
+    fontWeight: "500",
+    marginBottom: 35,
+    margin: 23,
   },
   input: {
     backgroundColor: "white",
@@ -54,7 +65,6 @@ const estilos = StyleSheet.create({
     borderRadius: 4,
   },
   formulario: {
-    marginVertical: 22,
     width: "80%",
   },
   botao: {
@@ -71,15 +81,9 @@ const estilos = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
     margin: 15,
-    marginTop: 25,
   },
   textoBotao: {
     fontSize: 24,
     textAlign: "center",
-  },
-  texto: {
-    fontFamily: "Montserrat",
-    fontSize: 30,
-    marginBottom: 35,
   },
 });
