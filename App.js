@@ -8,6 +8,7 @@ import Conectar from "./src/screens/Conectar";
 import Seguranca from "./src/screens/Seguranca";
 import Escolha from "./src/screens/Escolha";
 import Bemvindo from "./src/screens/Bemvindo";
+import Aceitar from "./src/screens/Aceitar";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +17,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
+        <Stack.Navigator initialRouteName="Aceitar">
           <Stack.Screen
             name="Login"
             component={Login}
@@ -50,6 +51,11 @@ export default function App() {
           <Stack.Screen
             name="Bemvindo"
             component={Bemvindo}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Aceitar"
+            component={Aceitar}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

@@ -1,57 +1,61 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TextInput,
-  Pressable,
-} from "react-native";
+import { StyleSheet, Text,r View, Pressable } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import React from "react";
 
 export default function Bemvindo({ navigation }) {
   return (
-    <SafeContainer>
-      <Text style={estilos.subtitle}>Bem-vindo à Acompanho</Text>
-      <View>
-        <Text style={estilos.texto}>Faça o login ou cadastre-se</Text>
-      </View>
-      <View style={estilos.formulario}>
-        <Text>E-mail:</Text>
-        <TextInput
-          placeholder="E-mail"
-          style={estilos.input}
-          keyboardType="email-address"
-        />
-      </View>
-      <Pressable style={estilos.botao}>
-        <Text style={estilos.textoBotao}>Continuar</Text>
+    <SafeContainer style={estilos.container}>
+      <Text style={estilos.titulo}>Antes de aderir:</Text>
+      <Text style={estilos.texto}>
+        Nossa missão é construir uma comunidade de confiança entre famílias e
+        cuidadores de idosos. Para isso, estabelecemos normas que esperamos que
+        todos os membros sigam.
+      </Text>
+      <Text style={estilos.texto}>
+        Normas da Comunidade: Ao interagir como membro da comunidade Acompanho,
+        comprometo-me a tratar todos com respeito e sem preconceitos.
+        Comunicarei de forma clara e sincera.
+      </Text>
+      <Text style={estilos.texto}>
+        Termos de Serviço: Também concordo com os Termos e Condições
+      </Text>
+      <Pressable
+        style={[estilos.botao, { backgroundColor: "hsla(207, 58%, 45%, 1)" }]}
+      >
+        <Text style={estilos.textoBotao}>Aceitar</Text>
+      </Pressable>
+      <Pressable
+        style={[estilos.botao, { backgroundColor: "hsla(0, 0%, 45%, 1)" }]}
+      >
+        <Text style={estilos.textoBotao}>Rejeitar</Text>
       </Pressable>
     </SafeContainer>
   );
 }
 
 const estilos = StyleSheet.create({
-  subtitle: {
-    fontSize: 31,
-    fontWeight: "500",
-    marginBottom: 35,
+  container: {
+    backgroundColor: "hsla(0, 0%, 20%, 1)",
+  },
+  titulo: {
+    fontFamily: "Montserrat",
+    fontWeight: "600",
+    fontSize: 24,
+    lineHeight: 29.26,
+    letterSpacing: "1%",
+    color: "hsla(0, 0%, 1%, 1)",
     margin: 23,
   },
-  input: {
-    backgroundColor: "white",
-    borderBottomColor: "#3079B5",
-    borderBottomWidth: 1.5,
-    marginVertical: 8,
-    padding: 8,
-    borderRadius: 4,
-  },
-  formulario: {
-    marginVertical: 16,
-    width: "80%",
+  texto: {
+    fontFamily: "Montserrat",
+    fontWeight: "400",
+    fontSize: 18,
+    lineHeight: 21.94,
+    letterSpacing: "1%",
+    color: "hsla(0, 0%, 1%, 1)",
+    marginVertical: 10,
   },
   botao: {
-    backgroundColor: "#6D9DC5",
     padding: 15,
     borderRadius: 40,
     width: 170,
@@ -66,11 +70,12 @@ const estilos = StyleSheet.create({
     margin: 15,
   },
   textoBotao: {
-    fontSize: 24,
+    fontFamily: "Montserrat",
+    fontWeight: "500",
+    fontSize: 22,
+    lineHeight: 20,
+    letterSpacing: "0.1px",
     textAlign: "center",
-  },
-  texto: {
-    fontSize: 20,
-    marginVertical: 10,
+    color: "hsla(0, 0%, 1%, 1)",
   },
 });
