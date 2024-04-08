@@ -7,7 +7,7 @@ export default function Inicio({ navigation }) {
   return (
     <SafeContainer>
       <View style={estilos.subcontainer}>
-        <Image source={ilustracao} />
+        <Image source={ilustracao} style={estilos.image} />
 
         <Text style={estilos.titulo}>Acompanho</Text>
         <Text style={estilos.texto}>
@@ -25,6 +25,10 @@ export default function Inicio({ navigation }) {
 }
 
 const estilos = StyleSheet.create({
+  image: {
+    width: 240,
+    height: 300,
+  },
   subcontainer: {
     alignItems: "center",
     gap: 10,

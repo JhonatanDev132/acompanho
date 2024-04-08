@@ -50,7 +50,7 @@ const estilos = StyleSheet.create({
     fontFamily: "Montserrat",
   },
   ilustracaoContainer: {
-    marginTop: 100,
+    marginTop: 42,
   },
   ilustracao: {
     width: 130,

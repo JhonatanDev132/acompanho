@@ -6,12 +6,14 @@ import {
   TextInput,
   Pressable,
 } from "react-native";
+import IconMini from "../../assets/images/logoMini.png";
 import SafeContainer from "../components/SafeContainer";
 import React from "react";
 
 export default function Bemvindo({ navigation }) {
   return (
     <SafeContainer>
+      <Image source={IconMini} />
       <Text style={estilos.subtitle}>Bem-vindo à Acompanho</Text>
       <View>
         <Text style={estilos.texto}>Faça o login ou cadastre-se</Text>

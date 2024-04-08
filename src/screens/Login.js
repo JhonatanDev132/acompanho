@@ -13,10 +13,9 @@ import React from "react";
 export default function Login({ navigation }) {
   return (
     <SafeContainer>
-      <Image source={Icon} style={estilos.logo} />
-      <Text style={estilos.texto}>Acompanho</Text>
-      <View>
-        <Text style={estilos.login}>Login</Text>
+      <View style={estilos.logo}>
+        <Image source={Icon} style={estilos.image} />
+        <Text style={estilos.texto}>Acompanho</Text>
       </View>
       <View style={estilos.formulario}>
         <Text>E-mail:</Text>
@@ -40,14 +39,11 @@ export default function Login({ navigation }) {
 
 const estilos = StyleSheet.create({
   logo: {
-    width: 167,
-    height: 130,
+    alignItems: "center",
   },
-  login: {
-    fontSize: 30,
-    fontWeight: "bold",
-    marginBottom: 30,
-    margin: 23,
+  image: {
+    width: 166,
+    height: 130,
   },
   input: {
     backgroundColor: "white",
@@ -58,7 +54,7 @@ const estilos = StyleSheet.create({
     borderRadius: 4,
   },
   formulario: {
-    marginVertical: 16,
+    marginVertical: 22,
     width: "80%",
   },
   botao: {
@@ -83,5 +79,6 @@ const estilos = StyleSheet.create({
   texto: {
     fontFamily: "Montserrat",
     fontSize: 20,
+    marginBottom: 35,
   },
 });
