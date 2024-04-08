@@ -7,6 +7,7 @@ import Procurar from "./src/screens/Procurar";
 import Conectar from "./src/screens/Conectar";
 import Seguranca from "./src/screens/Seguranca";
 import Escolha from "./src/screens/Escolha";
+import Bemvindo from "./src/screens/Bemvindo";
 
 const Stack = createNativeStackNavigator();
 
@@ -44,6 +45,11 @@ export default function App() {
           <Stack.Screen
             name="Seguranca"
             component={Seguranca}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Bemvindo"
+            component={Bemvindo}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
