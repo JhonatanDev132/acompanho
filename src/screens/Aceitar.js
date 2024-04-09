@@ -36,18 +36,17 @@ export default function Bemvindo({ navigation }) {
 
         <View style={estilos.botaoCentro}>
           <Pressable
-            style={[
-              estilos.botao,
-              { backgroundColor: "hsla(207, 58%, 45%, 1)" },
-            ]}
+            style={[estilos.botao, { backgroundColor: "#FAFAFA" }]}
+            onPress={() => navigation.navigate("Escolha")}
           >
-            <Text style={estilos.textoBotao}>Aceitar</Text>
+            <Text style={estilos.textoBotao}>Rejeitar</Text>
           </Pressable>
 
           <Pressable
-            style={[estilos.botao, { backgroundColor: "hsla(0, 0%, 45%, 1)" }]}
+            style={[estilos.botao, { backgroundColor: "#6D9DC5" }]}
+            onPress={() => navigation.navigate("TelaDeResposta")}
           >
-            <Text style={estilos.textoBotao}>Rejeitar</Text>
+            <Text style={estilos.textoBotao}>Aceitar</Text>
           </Pressable>
         </View>
       </ScrollView>
@@ -87,6 +86,7 @@ const estilos = StyleSheet.create({
   textoBotao: {
     fontSize: 18,
     textAlign: "center",
+    fontWeight: "700",
   },
   texto: {
     fontFamily: "Montserrat",

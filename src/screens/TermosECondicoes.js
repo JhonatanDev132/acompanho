@@ -91,8 +91,9 @@ const estilos = StyleSheet.create({
     marginBottom: 16,
   },
   textoBotao: {
-    fontSize: 24,
+    fontSize: 18,
     textAlign: "center",
+    fontWeight: "700",
   },
   texto: {
     fontFamily: "Montserrat",

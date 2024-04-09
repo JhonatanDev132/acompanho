@@ -11,7 +11,7 @@ export default function TelaDeResposta({ navigation }) {
           Para se conectar com outros membros você deve completar seu perfil.
         </Text>
       </View>
-      <View style={estilos.botaoContainer}>
+      <View style={estilos.botaoCentro}>
         <Pressable
           style={estilos.botao}
           onPress={() => navigation.navigate("Home")}
@@ -40,13 +40,9 @@ const estilos = StyleSheet.create({
     marginVertical: 16,
     width: "80%",
   },
-  botaoContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
   botao: {
     backgroundColor: "#6D9DC5",
-    padding: 15,
+    padding: 10,
     borderRadius: 40,
     width: 170,
     shadowColor: "#000",
@@ -57,14 +53,19 @@ const estilos = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-    margin: 15,
   },
   textoBotao: {
-    fontSize: 24,
+    fontSize: 18,
     textAlign: "center",
+    fontWeight: "700",
   },
   texto: {
     fontFamily: "Montserrat",
     fontSize: 20,
+  },
+  botaoCentro: {
+    marginBottom: 16,
+    flexDirection: "row",
+    gap: 15,
   },
 });
