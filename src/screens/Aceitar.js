@@ -31,7 +31,7 @@ export default function Bemvindo({ navigation }) {
           style={estilos.termos}
           onPress={() => navigation.navigate("TermosECondicoes")}
         >
-          Termos de Serviço: Também concordo com os Termos e Condições
+          Termos de Serviço: Concordo com os Termos e Condições
         </Text>
 
         <View style={estilos.botaoCentro}>
