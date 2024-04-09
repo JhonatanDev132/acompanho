@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, View, Pressable } from "react-native";
+import { StyleSheet, Text, View, Pressable, Image } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 
 export default function TelaDeResposta({ navigation }) {
@@ -25,6 +25,12 @@ export default function TelaDeResposta({ navigation }) {
           <Text style={estilos.textoBotao}>Completar Perfil</Text>
         </Pressable>
       </View>
+      <View style={estilos.imagemContainer}>
+        <Image
+          style={estilos.imagem}
+          source={require("C:/mobile/acompanho/assets/images/ilustracao-conectar.png")}
+        />
+      </View>
     </SafeContainer>
   );
 }
@@ -34,7 +40,7 @@ const estilos = StyleSheet.create({
     fontSize: 30,
     fontWeight: "bold",
     marginBottom: 30,
-    marginHorizontal: 23, // Alteração: mudei 'margin' para 'marginHorizontal'
+    marginHorizontal: 23,
   },
   formulario: {
     marginVertical: 16,
@@ -67,5 +73,13 @@ const estilos = StyleSheet.create({
     marginBottom: 16,
     flexDirection: "row",
     gap: 15,
+  },
+  imagemContainer: {
+    alignItems: "center",
+  },
+  imagem: {
+    width: 200,
+    height: 200,
+    marginTop: 50,
   },
 });
