@@ -8,11 +8,11 @@ import {
   Alert,
   Vibration,
 } from "react-native";
-import { auth } from "../../firebase.config";
+import { auth } from "../../firebase.config"; // Supondo que auth seja exportado de ../../firebase.config
 import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
-} from "firebase/auth";
+} from "firebase/auth"; // Correção aqui, importando diretamente do módulo 'auth'
 import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
 import React, { useState } from "react";
