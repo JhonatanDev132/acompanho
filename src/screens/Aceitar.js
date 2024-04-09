@@ -26,68 +26,86 @@ export default function Bemvindo({ navigation }) {
           Acompanho, comprometo-me a tratar todos com respeito e sem
           preconceitos. Comunicarei de forma clara e sincera.
         </Text>
-        <Text style={estilos.texto}>
+
+        <Text
+          style={estilos.termos}
+          onPress={() => navigation.navigate("TermosECondicoes")}
+        >
           Termos de Serviço: Também concordo com os Termos e Condições
         </Text>
-        <Pressable
-          style={[estilos.botao, { backgroundColor: "hsla(207, 58%, 45%, 1)" }]}
-        >
-          <Text style={estilos.textoBotao}>Aceitar</Text>
-        </Pressable>
-        <Pressable
-          style={[estilos.botao, { backgroundColor: "hsla(0, 0%, 45%, 1)" }]}
-        >
-          <Text style={estilos.textoBotao}>Rejeitar</Text>
-        </Pressable>
+
+        <View style={estilos.botaoCentro}>
+          <Pressable
+            style={[
+              estilos.botao,
+              { backgroundColor: "hsla(207, 58%, 45%, 1)" },
+            ]}
+          >
+            <Text style={estilos.textoBotao}>Aceitar</Text>
+          </Pressable>
+
+          <Pressable
+            style={[estilos.botao, { backgroundColor: "hsla(0, 0%, 45%, 1)" }]}
+          >
+            <Text style={estilos.textoBotao}>Rejeitar</Text>
+          </Pressable>
+        </View>
       </ScrollView>
     </SafeContainer>
   );
 }
 
 const estilos = StyleSheet.create({
-  container: {
-    backgroundColor: "hsla(0, 0%, 20%, 1)",
-    padding: width * 0.05,
-  },
   titulo: {
-    fontFamily: "Montserrat",
-    fontWeight: "600",
-    fontSize: width * 0.06,
-    lineHeight: width * 0.07,
-    letterSpacing: "1%",
-    color: "hsla(0, 0%, 1%, 1)",
-    margin: width * 0.05,
-  },
-  texto: {
-    fontFamily: "Montserrat",
-    fontWeight: "400",
-    fontSize: width * 0.045,
-    lineHeight: width * 0.05,
-    letterSpacing: "1%",
-    color: "hsla(0, 0%, 1%, 1)",
-    marginVertical: width * 0.025,
+    fontSize: 28 /* Alteração */,
+    fontFamily: "Montserrat" /* Adição */,
+    fontWeight: "700",
+    letterSpacing: 1,
+    marginBottom: 30 /* Alteração */,
+    marginLeft: 25 /* Adição */,
+    marginTop: 20,
   },
   botao: {
-    padding: width * 0.035,
-    borderRadius: width * 0.1,
-    width: width * 0.5,
+    backgroundColor: "#6D9DC5",
+    padding: 10,
+    borderRadius: 40,
+    width: 170,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: width * 0.005,
+      height: 2,
     },
     shadowOpacity: 0.25,
-    shadowRadius: width * 0.01,
+    shadowRadius: 3.84,
     elevation: 5,
-    margin: width * 0.035,
+  },
+  botaoCentro: {
+    marginBottom: 16,
+    flexDirection: "row",
+    justifyContent: "space-evenly",
   },
   textoBotao: {
-    fontFamily: "Montserrat",
-    fontWeight: "500",
-    fontSize: width * 0.055,
-    lineHeight: width * 0.05,
-    letterSpacing: "0.1px",
+    fontSize: 18,
     textAlign: "center",
-    color: "hsla(0, 0%, 1%, 1)",
+  },
+  texto: {
+    fontFamily: "Montserrat",
+    fontSize: 16 /* Alteração */,
+    marginBottom: 16,
+    paddingHorizontal: 30,
+  },
+  termos: {
+    fontFamily: "Montserrat",
+    fontSize: 14 /* Alteração */,
+    fontWeight: "700",
+    paddingHorizontal: 30,
+    marginBottom: 15,
+  },
+  textoBold: {
+    fontWeight: "700",
+    fontSize: 16,
+  },
+  container: {
+    flex: 1,
   },
 });

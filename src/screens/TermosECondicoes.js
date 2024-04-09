@@ -1,44 +1,61 @@
 import React from "react";
-import { StyleSheet, Text, View, Pressable, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Pressable,
+  ScrollView,
+  Image,
+} from "react-native";
 import SafeContainer from "../components/SafeContainer";
 
-export default function TermsAndConditions({ navigation }) {
+export default function TermosECondicoes({ navigation }) {
   return (
     <SafeContainer>
       <View style={estilos.container}>
         <ScrollView>
           <Text style={estilos.titulo}>Termos e Condições</Text>
           <View style={estilos.formulario}>
-            <Text>
-              <Text style={{ fontWeight: "bold" }}>Definições:</Text> Estes
-              termos se aplicam à parceria entre Acompanho, cuidador e famílias.
-              Ao usar os serviços do Acompanho, você concorda com estes termos.
+            <Text style={estilos.texto}>
+              <Text style={estilos.textoBold}>Definições:</Text> Estes termos se
+              aplicam à parceria entre Acompanho, cuidador e famílias. Ao usar
+              os serviços do Acompanho, você concorda com estes termos.
             </Text>
-            <Text>
-              <Text style={{ fontWeight: "bold" }}>Registro e Uso:</Text> A
-              Família faz o cadastro no Acompanho para encontrar um cuidador que
-              irá fazer o acompanhamento do idoso em consultas médicas.
+            <Text style={estilos.texto}>
+              <Text style={estilos.textoBold}>Registro e Uso:</Text> A Família
+              faz o cadastro no Acompanho para encontrar um cuidador que irá
+              fazer o acompanhamento do idoso em consultas médicas.
             </Text>
-            <Text>
-              <Text style={{ fontWeight: "bold" }}>Obrigações:</Text> A família
+            <Text style={estilos.texto}>
+              <Text style={estilos.textoBold}>Obrigações:</Text> A família
               escolhe o cuidador adequado, garantindo informações precisas. Os
               cuidadores cumprem suas obrigações legais e prestam os serviços
               conforme combinado.
             </Text>
-            <Text>
-              <Text style={{ fontWeight: "bold" }}>Responsabilidade:</Text> O
+            <Text style={estilos.texto}>
+              <Text style={estilos.textoBold}>Responsabilidade:</Text> O
               Acompanho se esforça para prestar serviços de qualidade, mas não é
               responsável por falhas na execução das atividades.
             </Text>
-            <Text>
-              <Text style={{ fontWeight: "bold" }}>Proteção de Dados:</Text> Os
-              dados pessoais são tratados com confidencialidade, exceto quando
+            <Text style={estilos.texto}>
+              <Text style={estilos.textoBold}>Proteção de Dados:</Text> Os dados
+              pessoais são tratados com confidencialidade, exceto quando
               necessário por lei ou contrato.
             </Text>
           </View>
-          <Pressable style={estilos.botao} onPress={() => navigation.goBack()}>
-            <Text style={estilos.textoBotao}>Voltar</Text>
-          </Pressable>
+          <View style={estilos.botaoCentro}>
+            <Pressable
+              style={estilos.botao}
+              onPress={() => navigation.goBack()}
+            >
+              <Text
+                style={estilos.textoBotao}
+                onPress={() => navigation.navigate("Aceitar")}
+              >
+                Voltar
+              </Text>
+            </Pressable>
+          </View>
         </ScrollView>
       </View>
     </SafeContainer>
@@ -47,14 +64,13 @@ export default function TermsAndConditions({ navigation }) {
 
 const estilos = StyleSheet.create({
   titulo: {
-    fontSize: 30,
-    fontWeight: "bold",
-    marginBottom: 30,
-    margin: 23,
-  },
-  formulario: {
-    marginVertical: 16,
-    width: "80%",
+    fontSize: 28 /* Alteração */,
+    fontFamily: "Montserrat" /* Adição */,
+    fontWeight: "700",
+    letterSpacing: 1,
+    marginBottom: 30 /* Alteração */,
+    marginLeft: 25 /* Adição */,
+    marginTop: 20,
   },
   botao: {
     backgroundColor: "#6D9DC5",
@@ -69,7 +85,10 @@ const estilos = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
-    margin: 15,
+  },
+  botaoCentro: {
+    alignItems: "center",
+    marginBottom: 16,
   },
   textoBotao: {
     fontSize: 24,
@@ -77,10 +96,15 @@ const estilos = StyleSheet.create({
   },
   texto: {
     fontFamily: "Montserrat",
-    fontSize: 20,
+    fontSize: 16 /* Alteração */,
+    marginBottom: 16,
+    paddingHorizontal: 30,
+  },
+  textoBold: {
+    fontWeight: "700",
+    fontSize: 16,
   },
   container: {
     flex: 1,
-    justifyContent: "space-around",
   },
 });
