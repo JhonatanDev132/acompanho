@@ -8,31 +8,49 @@ import {
 } from "react-native";
 import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Cadastro({ navigation }) {
+  const [telefone, setTelefone] = useState("");
+
+  // Função para formatar o número de telefone conforme o usuário insere
+  const formatarTelefone = (input) => {
+    // Remove todos os caracteres não numéricos do input
+    const cleaned = ("" + input).replace(/\D/g, "");
+    // Formata o número de telefone: (xx) xxxxx-xxxx
+    const match = cleaned.match(/^(\d{2})(\d{5})(\d{4})$/);
+    if (match) {
+      return "(" + match[1] + ") " + match[2] + "-" + match[3];
+    }
+    return null;
+  };
+
   return (
     <SafeContainer>
       <Image source={Icon} style={estilos.logo} />
       <Text style={estilos.subtitle}>Cadastre-se!</Text>
       <View style={estilos.formulario}>
-        <Text>Nome</Text>
+        <Text>Nome Completo</Text>
         <TextInput
-          placeholder="Nome"
+          placeholder="Nome Completo"
           style={estilos.input}
           keyboardType="default"
         />
-        <Text>Sobrenome</Text>
+        <Text>Telefone</Text>
         <TextInput
-          placeholder="Sobrenome"
+          placeholder="(00) 00000-0000"
+          maxLength={15}
           style={estilos.input}
-          keyboardType="default"
+          keyboardType="phone-pad"
+          value={telefone}
+          onChangeText={(text) => setTelefone(formatarTelefone(text))}
+          autoCompleteType="off"
         />
         <Text>Senha</Text>
         <TextInput placeholder="Senha" style={estilos.input} secureTextEntry />
       </View>
       <Pressable style={estilos.botao}>
-        <Text style={estilos.textoBotao}>Cadastro</Text>
+        <Text style={estilos.textoBotao}>Continuar</Text>
       </Pressable>
     </SafeContainer>
   );
