@@ -8,8 +8,7 @@ export default function Home() {
   return (
     <SafeContainer>
       <View style={estilos.subcontainer}>
-        <MapView style={estilos.mapa} mapType='terrain' />
-        
+        <MapView style={estilos.map} mapType='terrain' />
       </View>
     </SafeContainer>
   );
@@ -21,7 +20,7 @@ const estilos = StyleSheet.create({
     paddingLeft: 0,
     paddingRight: 0,
   },
-  mapa: {
+  map: {
     flex: 1,
     width: '100%',    
   },
