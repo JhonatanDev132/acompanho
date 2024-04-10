@@ -30,7 +30,7 @@ export default function Login({ navigation }) {
     try {
       await signInWithEmailAndPassword(auth, email, senha);
       console.log("Login feito com sucesso!");
-      navigation.replace("Inicadastro");
+      navigation.replace("AreaLogada");
     } catch (error) {
       console.error(error.code);
       let mensagem;
