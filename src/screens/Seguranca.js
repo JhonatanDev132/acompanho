@@ -6,15 +6,13 @@ import verificacao from '../../assets/images/verificacao.png'
 import certificado from '../../assets/images/certificado.png'
 import acessivel from '../../assets/images/acessivel.png'
 import mensagem from '../../assets/images/mensagem.png'
-import LinearGradientComponents from '../components/LinearGradientComponent'
 
 
 export default function Seguranca() {
   return (
     <SafeContainer>
-      <LinearGradientComponents>
-        <ScrollView>
-          <View style={estilos.subcontainer}>
+      <ScrollView>
+        <View style={estilos.subcontainer}>
             <Image 
               style={estilos.logo} 
               source={logoMini}
@@ -71,9 +69,8 @@ export default function Seguranca() {
                 Continuar
               </Text>
             </Pressable>
-          </View>
+        </View>
         </ScrollView>
-      </LinearGradientComponents>
     </SafeContainer>
   )
 }
