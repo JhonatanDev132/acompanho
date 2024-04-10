@@ -9,7 +9,8 @@ import {
 import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
 import React, { useState } from "react";
-import { LinearGradient } from "expo-linear-gradient";
+import LinearGradientComponent from "../components/LinearGradientComponent";
+
 
 export default function Cadastro({ navigation }) {
   const [telefone, setTelefone] = useState("");
@@ -28,7 +29,7 @@ export default function Cadastro({ navigation }) {
 
   return (
     <SafeContainer>
-      <LinearGradient>
+      <LinearGradientComponent>
         <Image source={Icon} style={estilos.logo} />
           <Text style={estilos.subtitle}>Cadastre-se!</Text>
         <View style={estilos.formulario}>
@@ -54,7 +55,7 @@ export default function Cadastro({ navigation }) {
         <Pressable style={estilos.botao}>
           <Text style={estilos.textoBotao}>Continuar</Text>
         </Pressable>
-      </LinearGradient>
+      </LinearGradientComponent>
     </SafeContainer>
   );
 }

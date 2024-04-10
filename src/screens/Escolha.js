@@ -9,12 +9,12 @@ import {
 import SafeContainer from "../components/SafeContainer";
 import ilustracaoEscolha from "../../assets/images/ilustracao-escolha.png";
 import React from "react";
-import { LinearGradient } from "expo-linear-gradient";
+import LinearGradientComponent from "../components/LinearGradientComponent";
 
 export default function Escolha({ navigation }) {
   return (
     <SafeContainer>
-      <LinearGradient>
+      <LinearGradientComponent>
         <View style={estilos.container}>
           <View>
             <Text style={estilos.texto}>Nos fale sobre você!</Text>
@@ -36,7 +36,7 @@ export default function Escolha({ navigation }) {
         <View style={estilos.ilustracaoContainer}>
           <Image source={ilustracaoEscolha} style={estilos.ilustracao} />
         </View>
-      </LinearGradient>
+      </LinearGradientComponent>
     </SafeContainer>
   );
 }

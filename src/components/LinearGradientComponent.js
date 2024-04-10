@@ -6,7 +6,7 @@ import { LinearGradient } from "expo-linear-gradient";
 
 SplashScreen.preventAutoHideAsync();
 
-export default function LinearGradientComponents({ children }) {
+export default function LinearGradientComponent({ children }) {
   return (
 
       <LinearGradient colors={["#F4FAFE", "#ADC1D1"]} style={estilos.gradient}>

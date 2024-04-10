@@ -9,12 +9,12 @@ import {
 import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
 import React from "react";
-import { LinearGradient } from "expo-linear-gradient";
+import LinearGradientComponent from "../components/LinearGradientComponent";
 
 export default function Inicadastro({ navigation }) {
   return (
     <SafeContainer>
-      <LinearGradient>
+      <LinearGradientComponent>
         <Image source={Icon} style={estilos.logo} />
           <Text style={estilos.subtitle}>Dê início ao seu cadastro!</Text>
           <Text style={estilos.texto}>Nos informe seu e-mail para começarmos</Text>
@@ -32,7 +32,7 @@ export default function Inicadastro({ navigation }) {
           >
             <Text style={estilos.textoBotao}>Continuar</Text>
         </Pressable>
-      </LinearGradient>
+      </LinearGradientComponent>
     </SafeContainer>
   );
 }

@@ -2,12 +2,12 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import ilustracao from "../../assets/images/ilustracao-inicio.png";
 import SafeContainer from "../../src/components/SafeContainer";
-import { LinearGradient } from "expo-linear-gradient";
+import LinearGradientComponent from "../components/LinearGradientComponent";
 
 export default function Inicio({ navigation }) {
   return (
     <SafeContainer>
-      <LinearGradient>
+      <LinearGradientComponent>
         <View style={estilos.subcontainer}>
           <Image source={ilustracao} style={estilos.image} />
 
@@ -22,7 +22,7 @@ export default function Inicio({ navigation }) {
             <Text style={estilos.textoBotao}>Início</Text>
           </Pressable>
         </View>
-      </LinearGradient>
+      </LinearGradientComponent>
     </SafeContainer>
   );
 }

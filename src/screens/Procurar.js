@@ -3,13 +3,13 @@ import React from 'react'
 import SafeContainer from '../components/SafeContainer'
 import logoMini from '../../assets/images/logoMini.png'
 import procurar from '../../assets/images/ilustracao-procurar.png' 
-import { LinearGradient } from 'expo-linear-gradient'
+import LinearGradientComponent from '../components/LinearGradientComponent'
 
 
 export default function Detalhes({navigation}) {
   return (
     <SafeContainer>
-        <LinearGradient>
+        <LinearGradientComponent>
           <View style={estilos.subcontainer}>
               <Image style={estilos.logo} source={logoMini}/>
               <Text style={estilos.titulo}>Procurar</Text>
@@ -25,7 +25,7 @@ export default function Detalhes({navigation}) {
                 </Text>
               </Pressable>
           </View>
-        </LinearGradient>
+        </LinearGradientComponent>
     </SafeContainer>
   )
 }
