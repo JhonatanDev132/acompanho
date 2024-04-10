@@ -8,26 +8,28 @@ import {
 } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import ilustracaoEscolha from "../../assets/images/ilustracao-escolha.png";
-import React from "react";
+import React, { useState } from "react";
 
 export default function Escolha({ navigation }) {
+  const cuidador = () => {
+    navigation.navigate("Inicadastro", { escolha: "Cuidador" });
+  };
+
+  const usuario = () => {
+    navigation.navigate("Inicadastro", { escolha: "Usuario" });
+  };
+
   return (
     <SafeContainer>
       <View style={estilos.container}>
         <View>
           <Text style={estilos.texto}>Nos fale sobre você!</Text>
         </View>
-        <Pressable
-          style={estilos.botao}
-          onPress={() => navigation.navigate("Inicadastro")}
-        >
+        <Pressable style={estilos.botao} onPress={cuidador}>
           <Text style={estilos.textoBotao}>Sou um cuidador</Text>
         </Pressable>
         <Text style={{ fontWeight: "bold" }}>Ou</Text>
-        <Pressable
-          style={estilos.botao}
-          onPress={() => navigation.navigate("Inicadastro")}
-        >
+        <Pressable style={estilos.botao} onPress={usuario}>
           <Text style={estilos.textoBotao}>Estou à procura de um cuidador</Text>
         </Pressable>
       </View>
