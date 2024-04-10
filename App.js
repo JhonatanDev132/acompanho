@@ -9,6 +9,7 @@ import Seguranca from "./src/screens/Seguranca";
 import Escolha from "./src/screens/Escolha";
 import Inicadastro from "./src/screens/Inicadastro";
 import Cadastro from "./src/screens/Cadastro";
+import AreaLogada from "./src/screens/AreaLogada";
 
 const Stack = createNativeStackNavigator();
 
@@ -56,6 +57,11 @@ export default function App() {
           <Stack.Screen
             name="Cadastro"
             component={Cadastro}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="AreaLogada"
+            component={AreaLogada}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
