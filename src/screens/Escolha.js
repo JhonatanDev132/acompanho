@@ -9,26 +9,24 @@ import {
 import SafeContainer from "../components/SafeContainer";
 import ilustracaoEscolha from "../../assets/images/ilustracao-escolha.png";
 import React from "react";
-import LinearGradientComponents from "../components/LinearGradientComponent";
 
 export default function Escolha({ navigation }) {
   return (
     <SafeContainer>
-      <LinearGradientComponents>
       <View style={estilos.container}>
         <View>
-          <Text style={estilos.texto}>Concluir a inscrição</Text>
+          <Text style={estilos.texto}>Nos fale sobre você!</Text>
         </View>
         <Pressable
           style={estilos.botao}
-          onPress={() => navigation.navigate("Bemvindo")}
+          onPress={() => navigation.navigate("Inicadastro")}
         >
           <Text style={estilos.textoBotao}>Sou um cuidador</Text>
         </Pressable>
         <Text style={{ fontWeight: "bold" }}>Ou</Text>
         <Pressable
           style={estilos.botao}
-          onPress={() => navigation.navigate("Bemvindo")}
+          onPress={() => navigation.navigate("Inicadastro")}
         >
           <Text style={estilos.textoBotao}>Estou à procura de um cuidador</Text>
         </Pressable>
@@ -36,7 +34,6 @@ export default function Escolha({ navigation }) {
       <View style={estilos.ilustracaoContainer}>
         <Image source={ilustracaoEscolha} style={estilos.ilustracao} />
       </View>
-      </LinearGradientComponents>
     </SafeContainer>
   );
 }
@@ -48,12 +45,12 @@ const estilos = StyleSheet.create({
   },
   texto: {
     marginVertical: 30,
-    fontSize: 18,
+    fontSize: 25,
     fontWeight: "500",
     fontFamily: "Montserrat",
   },
   ilustracaoContainer: {
-    marginTop: 100,
+    marginTop: 42,
   },
   ilustracao: {
     width: 130,
