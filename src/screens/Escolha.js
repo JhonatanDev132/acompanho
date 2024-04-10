@@ -9,31 +9,34 @@ import {
 import SafeContainer from "../components/SafeContainer";
 import ilustracaoEscolha from "../../assets/images/ilustracao-escolha.png";
 import React from "react";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function Escolha({ navigation }) {
   return (
     <SafeContainer>
-      <View style={estilos.container}>
-        <View>
-          <Text style={estilos.texto}>Nos fale sobre você!</Text>
+      <LinearGradient>
+        <View style={estilos.container}>
+          <View>
+            <Text style={estilos.texto}>Nos fale sobre você!</Text>
+          </View>
+          <Pressable
+            style={estilos.botao}
+            onPress={() => navigation.navigate("Inicadastro")}
+          >
+            <Text style={estilos.textoBotao}>Sou um cuidador</Text>
+          </Pressable>
+          <Text style={{ fontWeight: "bold" }}>Ou</Text>
+          <Pressable
+            style={estilos.botao}
+            onPress={() => navigation.navigate("Inicadastro")}
+          >
+            <Text style={estilos.textoBotao}>Estou à procura de um cuidador</Text>
+          </Pressable>
         </View>
-        <Pressable
-          style={estilos.botao}
-          onPress={() => navigation.navigate("Inicadastro")}
-        >
-          <Text style={estilos.textoBotao}>Sou um cuidador</Text>
-        </Pressable>
-        <Text style={{ fontWeight: "bold" }}>Ou</Text>
-        <Pressable
-          style={estilos.botao}
-          onPress={() => navigation.navigate("Inicadastro")}
-        >
-          <Text style={estilos.textoBotao}>Estou à procura de um cuidador</Text>
-        </Pressable>
-      </View>
-      <View style={estilos.ilustracaoContainer}>
-        <Image source={ilustracaoEscolha} style={estilos.ilustracao} />
-      </View>
+        <View style={estilos.ilustracaoContainer}>
+          <Image source={ilustracaoEscolha} style={estilos.ilustracao} />
+        </View>
+      </LinearGradient>
     </SafeContainer>
   );
 }

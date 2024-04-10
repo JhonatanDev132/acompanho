@@ -9,6 +9,7 @@ import {
 import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
 import React, { useState } from "react";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function Cadastro({ navigation }) {
   const [telefone, setTelefone] = useState("");
@@ -27,31 +28,33 @@ export default function Cadastro({ navigation }) {
 
   return (
     <SafeContainer>
-      <Image source={Icon} style={estilos.logo} />
-      <Text style={estilos.subtitle}>Cadastre-se!</Text>
-      <View style={estilos.formulario}>
-        <Text>Nome Completo</Text>
-        <TextInput
-          placeholder="Nome Completo"
-          style={estilos.input}
-          keyboardType="default"
-        />
-        <Text>Telefone</Text>
-        <TextInput
-          placeholder="(00) 00000-0000"
-          maxLength={15}
-          style={estilos.input}
-          keyboardType="phone-pad"
-          value={telefone}
-          onChangeText={(text) => setTelefone(formatarTelefone(text))}
-          autoCompleteType="off"
-        />
-        <Text>Senha</Text>
-        <TextInput placeholder="Senha" style={estilos.input} secureTextEntry />
-      </View>
-      <Pressable style={estilos.botao}>
-        <Text style={estilos.textoBotao}>Continuar</Text>
-      </Pressable>
+      <LinearGradient>
+        <Image source={Icon} style={estilos.logo} />
+          <Text style={estilos.subtitle}>Cadastre-se!</Text>
+        <View style={estilos.formulario}>
+          <Text>Nome Completo</Text>
+          <TextInput
+            placeholder="Nome Completo"
+            style={estilos.input}
+            keyboardType="default"
+          />
+          <Text>Telefone</Text>
+          <TextInput
+            placeholder="(00) 00000-0000"
+            maxLength={15}
+            style={estilos.input}
+            keyboardType="phone-pad"
+            value={telefone}
+            onChangeText={(text) => setTelefone(formatarTelefone(text))}
+            autoCompleteType="off"
+          />
+            <Text>Senha</Text>
+          <TextInput placeholder="Senha" style={estilos.input} secureTextEntry />
+        </View>
+        <Pressable style={estilos.botao}>
+          <Text style={estilos.textoBotao}>Continuar</Text>
+        </Pressable>
+      </LinearGradient>
     </SafeContainer>
   );
 }

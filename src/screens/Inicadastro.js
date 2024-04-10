@@ -9,27 +9,30 @@ import {
 import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
 import React from "react";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function Inicadastro({ navigation }) {
   return (
     <SafeContainer>
-      <Image source={Icon} style={estilos.logo} />
-      <Text style={estilos.subtitle}>Dê início ao seu cadastro!</Text>
-      <Text style={estilos.texto}>Nos informe seu e-mail para começarmos</Text>
-      <View style={estilos.formulario}>
-        <Text>E-mail</Text>
-        <TextInput
-          placeholder="E-mail"
-          style={estilos.input}
-          keyboardType="email-address"
-        />
-      </View>
-      <Pressable
-        style={estilos.botao}
-        onPress={() => navigation.navigate("Cadastro")}
-      >
-        <Text style={estilos.textoBotao}>Continuar</Text>
-      </Pressable>
+      <LinearGradient>
+        <Image source={Icon} style={estilos.logo} />
+          <Text style={estilos.subtitle}>Dê início ao seu cadastro!</Text>
+          <Text style={estilos.texto}>Nos informe seu e-mail para começarmos</Text>
+        <View style={estilos.formulario}>
+          <Text>E-mail</Text>
+          <TextInput
+            placeholder="E-mail"
+            style={estilos.input}
+            keyboardType="email-address"
+          />
+        </View>
+          <Pressable
+            style={estilos.botao}
+            onPress={() => navigation.navigate("Cadastro")}
+          >
+            <Text style={estilos.textoBotao}>Continuar</Text>
+        </Pressable>
+      </LinearGradient>
     </SafeContainer>
   );
 }

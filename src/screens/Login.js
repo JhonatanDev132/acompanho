@@ -9,30 +9,33 @@ import {
 import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
 import React from "react";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function Login({ navigation }) {
   return (
     <SafeContainer>
-      <View style={estilos.logo}>
-        <Image source={Icon} style={estilos.image} />
-        <Text style={estilos.texto}>Acompanho</Text>
-      </View>
-      <View style={estilos.formulario}>
-        <Text>E-mail</Text>
-        <TextInput
-          placeholder="E-mail"
-          style={estilos.input}
-          keyboardType="email-address"
-        />
-        <Text>Senha</Text>
-        <TextInput placeholder="Senha" style={estilos.input} secureTextEntry />
-      </View>
-      <Pressable style={estilos.botao}>
-        <Text style={estilos.textoBotao}>Entrar</Text>
-      </Pressable>
-      <Pressable onPress={() => navigation.navigate("Inicio")}>
-        <Text>Cadastrar</Text>
-      </Pressable>
+      <LinearGradient>
+        <View style={estilos.logo}>
+          <Image source={Icon} style={estilos.image} />
+          <Text style={estilos.texto}>Acompanho</Text>
+        </View>
+        <View style={estilos.formulario}>
+          <Text>E-mail</Text>
+          <TextInput
+            placeholder="E-mail"
+            style={estilos.input}
+            keyboardType="email-address"
+          />
+          <Text>Senha</Text>
+          <TextInput placeholder="Senha" style={estilos.input} secureTextEntry />
+        </View>
+        <Pressable style={estilos.botao}>
+          <Text style={estilos.textoBotao}>Entrar</Text>
+        </Pressable>
+        <Pressable onPress={() => navigation.navigate("Inicio")}>
+          <Text>Cadastrar</Text>
+        </Pressable>
+      </LinearGradient>
     </SafeContainer>
   );
 }

@@ -9,6 +9,7 @@ import Seguranca from "./src/screens/Seguranca";
 import Escolha from "./src/screens/Escolha";
 import Inicadastro from "./src/screens/Inicadastro";
 import Cadastro from "./src/screens/Cadastro";
+import Home from "./src/screens/Home";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +18,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="light-content" />
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Login">
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen
             name="Login"
             component={Login}
@@ -56,6 +57,11 @@ export default function App() {
           <Stack.Screen
             name="Cadastro"
             component={Cadastro}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Home"
+            component={Home}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

@@ -3,11 +3,13 @@ import React from 'react'
 import SafeContainer from '../components/SafeContainer'
 import logoMini from '../../assets/images/logoMini.png'
 import conectar from '../../assets/images/ilustracao-conectar.png' 
+import { LinearGradient } from 'expo-linear-gradient'
 
 
 export default function Conectar({ navigation }) {
   return (
     <SafeContainer>
+      <LinearGradient>
         <View style={estilos.subcontainer}>
             <Image style={estilos.logo} source={logoMini}/>
             <Text style={estilos.titulo}>Conectar</Text>
@@ -23,6 +25,7 @@ export default function Conectar({ navigation }) {
               </Text>
             </Pressable>
         </View>
+      </LinearGradient>
     </SafeContainer>
   )
 }

@@ -2,24 +2,27 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import ilustracao from "../../assets/images/ilustracao-inicio.png";
 import SafeContainer from "../../src/components/SafeContainer";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function Inicio({ navigation }) {
   return (
     <SafeContainer>
-      <View style={estilos.subcontainer}>
-        <Image source={ilustracao} style={estilos.image} />
+      <LinearGradient>
+        <View style={estilos.subcontainer}>
+          <Image source={ilustracao} style={estilos.image} />
 
-        <Text style={estilos.titulo}>Acompanho</Text>
-        <Text style={estilos.texto}>
-          A plataforma que acompanha seus familiares nas consultas médicas.
-        </Text>
-        <Pressable
-          style={estilos.botao}
-          onPress={() => navigation.navigate("Escolha")}
-        >
-          <Text style={estilos.textoBotao}>Início</Text>
-        </Pressable>
-      </View>
+          <Text style={estilos.titulo}>Acompanho</Text>
+          <Text style={estilos.texto}>
+            A plataforma que acompanha seus familiares nas consultas médicas.
+          </Text>
+          <Pressable
+            style={estilos.botao}
+            onPress={() => navigation.navigate("Escolha")}
+          >
+            <Text style={estilos.textoBotao}>Início</Text>
+          </Pressable>
+        </View>
+      </LinearGradient>
     </SafeContainer>
   );
 }
