@@ -9,41 +9,48 @@ import {
 import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
 import React from "react";
+import LinearGradientComponents from "../components/LinearGradientComponent";
 
 export default function Login({ navigation }) {
   return (
     <SafeContainer>
-      <View style={estilos.logo}>
-        <Image source={Icon} style={estilos.image} />
+      <LinearGradientComponents>
+        <Image source={Icon} style={estilos.logo} />
         <Text style={estilos.texto}>Acompanho</Text>
-      </View>
-      <View style={estilos.formulario}>
-        <Text>E-mail</Text>
-        <TextInput
-          placeholder="E-mail"
-          style={estilos.input}
-          keyboardType="email-address"
-        />
-        <Text>Senha</Text>
-        <TextInput placeholder="Senha" style={estilos.input} secureTextEntry />
-      </View>
-      <Pressable style={estilos.botao}>
-        <Text style={estilos.textoBotao}>Entrar</Text>
-      </Pressable>
-      <Pressable onPress={() => navigation.navigate("Inicio")}>
-        <Text>Cadastrar</Text>
-      </Pressable>
+          <View>
+            <Text style={estilos.login}>Login</Text>
+          </View>
+          <View style={estilos.formulario}>
+            <Text>E-mail:</Text>
+            <TextInput
+              placeholder="E-mail"
+              style={estilos.input}
+              keyboardType="email-address"
+            />
+            <Text>Senha:</Text>
+            <TextInput placeholder="Senha" style={estilos.input} secureTextEntry />
+          </View>
+        <Pressable style={estilos.botao}>
+          <Text style={estilos.textoBotao}>Entrar</Text>
+        </Pressable>
+        <Pressable onPress={() => navigation.navigate("Inicio")}>
+          <Text>Cadastrar</Text>
+        </Pressable>
+      </LinearGradientComponents>
     </SafeContainer>
   );
 }
 
 const estilos = StyleSheet.create({
   logo: {
-    alignItems: "center",
-  },
-  image: {
-    width: 166,
+    width: 167,
     height: 130,
+  },
+  login: {
+    fontSize: 30,
+    fontWeight: "bold",
+    marginBottom: 30,
+    margin: 23,
   },
   input: {
     backgroundColor: "white",
@@ -54,7 +61,7 @@ const estilos = StyleSheet.create({
     borderRadius: 4,
   },
   formulario: {
-    marginVertical: 22,
+    marginVertical: 16,
     width: "80%",
   },
   botao: {
@@ -71,7 +78,6 @@ const estilos = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
     margin: 15,
-    marginTop: 25,
   },
   textoBotao: {
     fontSize: 24,
@@ -79,7 +85,6 @@ const estilos = StyleSheet.create({
   },
   texto: {
     fontFamily: "Montserrat",
-    fontSize: 30,
-    marginBottom: 35,
+    fontSize: 20,
   },
 });
