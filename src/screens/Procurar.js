@@ -3,26 +3,29 @@ import React from 'react'
 import SafeContainer from '../components/SafeContainer'
 import logoMini from '../../assets/images/logoMini.png'
 import procurar from '../../assets/images/ilustracao-procurar.png' 
+import LinearGradientComponent from '../components/LinearGradientComponent'
 
 
 export default function Detalhes({navigation}) {
   return (
     <SafeContainer>
-        <View style={estilos.subcontainer}>
-            <Image style={estilos.logo} source={logoMini}/>
-            <Text style={estilos.titulo}>Procurar</Text>
-            <Text style={estilos.texto}>Utilize a barra de pesquisa para encontrar apoiadores de idosos disponíveis na sua região.</Text>
-            <Image 
-              style={estilos.ilustracao} 
-              source={procurar}
-            />
-            
-            <Pressable onPress={() => navigation.navigate("Conectar")} style={estilos.botao}>
-              <Text style={estilos.textoBotao}>
-                Continuar
-              </Text>
-            </Pressable>
-        </View>
+        <LinearGradientComponent>
+          <View style={estilos.subcontainer}>
+              <Image style={estilos.logo} source={logoMini}/>
+              <Text style={estilos.titulo}>Procurar</Text>
+              <Text style={estilos.texto}>Utilize a barra de pesquisa para encontrar apoiadores de idosos disponíveis na sua região.</Text>
+              <Image 
+                style={estilos.ilustracao} 
+                source={procurar}
+              />
+              
+              <Pressable onPress={() => navigation.navigate("Conectar")} style={estilos.botao}>
+                <Text style={estilos.textoBotao}>
+                  Continuar
+                </Text>
+              </Pressable>
+          </View>
+        </LinearGradientComponent>
     </SafeContainer>
   )
 }

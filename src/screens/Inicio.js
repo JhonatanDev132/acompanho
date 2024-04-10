@@ -2,29 +2,36 @@ import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import ilustracao from "../../assets/images/ilustracao-inicio.png";
 import SafeContainer from "../../src/components/SafeContainer";
+import LinearGradientComponent from "../components/LinearGradientComponent";
 
 export default function Inicio({ navigation }) {
   return (
     <SafeContainer>
-      <View style={estilos.subcontainer}>
-        <Image source={ilustracao} />
+      <LinearGradientComponent>
+        <View style={estilos.subcontainer}>
+          <Image source={ilustracao} style={estilos.image} />
 
-        <Text style={estilos.titulo}>Acompanho</Text>
-        <Text style={estilos.texto}>
-          A plataforma que acompanha seus familiares nas consultas médicas.
-        </Text>
-        <Pressable
-          style={estilos.botao}
-          onPress={() => navigation.navigate("Escolha")}
-        >
-          <Text style={estilos.textoBotao}>Início</Text>
-        </Pressable>
-      </View>
+          <Text style={estilos.titulo}>Acompanho</Text>
+          <Text style={estilos.texto}>
+            A plataforma que acompanha seus familiares nas consultas médicas.
+          </Text>
+          <Pressable
+            style={estilos.botao}
+            onPress={() => navigation.navigate("Escolha")}
+          >
+            <Text style={estilos.textoBotao}>Início</Text>
+          </Pressable>
+        </View>
+      </LinearGradientComponent>
     </SafeContainer>
   );
 }
 
 const estilos = StyleSheet.create({
+  image: {
+    width: 240,
+    height: 300,
+  },
   subcontainer: {
     alignItems: "center",
     gap: 10,
@@ -32,7 +39,7 @@ const estilos = StyleSheet.create({
   titulo: {
     fontSize: 38,
     fontFamily: "Montserrat",
-    fontWeight: "700",
+    fontWeight: "500",
     letterSpacing: 1,
     marginBottom: 8,
   },
