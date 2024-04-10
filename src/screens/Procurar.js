@@ -3,13 +3,11 @@ import React from 'react'
 import SafeContainer from '../components/SafeContainer'
 import logoMini from '../../assets/images/logoMini.png'
 import procurar from '../../assets/images/ilustracao-procurar.png' 
-import LinearGradientComponents from '../components/LinearGradientComponent'
 
 
-export default function Procurar({navigation}) {
+export default function Detalhes({navigation}) {
   return (
     <SafeContainer>
-      <LinearGradientComponents>
         <View style={estilos.subcontainer}>
             <Image style={estilos.logo} source={logoMini}/>
             <Text style={estilos.titulo}>Procurar</Text>
@@ -25,7 +23,6 @@ export default function Procurar({navigation}) {
               </Text>
             </Pressable>
         </View>
-      </LinearGradientComponents>
     </SafeContainer>
   )
 }
