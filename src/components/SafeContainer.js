@@ -33,9 +33,4 @@ const estilos = StyleSheet.create({
     paddingRight: 0,
     flex: 1,
   },
-  gradient: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
 });

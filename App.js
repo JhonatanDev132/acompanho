@@ -2,6 +2,7 @@ import { SafeAreaView, StatusBar, StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
+import { useState, useEffect, useCallback } from "react";
 
 import Inicio from "./src/screens/Inicio";
 import Login from "./src/screens/Login";
@@ -18,7 +19,7 @@ const Tab = createBottomTabNavigator();
 
 function StackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Home">
+    <Stack.Navigator initialRouteName="Login">
     <Stack.Screen
       name="Login"
       component={Login}
@@ -81,6 +82,7 @@ function TabNavigator() {
 }
 
 export default function App() {
+
   return (
     <>
       <StatusBar barStyle="light-content" />
@@ -91,8 +93,3 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
