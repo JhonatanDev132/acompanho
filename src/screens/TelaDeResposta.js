@@ -16,12 +16,7 @@ export default function TelaDeResposta({ navigation }) {
           style={estilos.botao}
           onPress={() => navigation.navigate("Home")}
         >
-          <Text
-            style={estilos.textoBotao}
-            onPress={() => navigation.navigate("Escolha")}
-          >
-            Mais tarde
-          </Text>
+          <Text style={estilos.textoBotao}>Mais tarde</Text>
         </Pressable>
         <Pressable
           style={estilos.botao}

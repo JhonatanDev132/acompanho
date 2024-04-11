@@ -46,14 +46,9 @@ export default function TermosECondicoes({ navigation }) {
           <View style={estilos.botaoCentro}>
             <Pressable
               style={estilos.botao}
-              onPress={() => navigation.goBack()}
+              onPress={() => navigation.navigate("Aceitar")}
             >
-              <Text
-                style={estilos.textoBotao}
-                onPress={() => navigation.navigate("Aceitar")}
-              >
-                Voltar
-              </Text>
+              <Text style={estilos.textoBotao}>Voltar</Text>
             </Pressable>
           </View>
         </ScrollView>
