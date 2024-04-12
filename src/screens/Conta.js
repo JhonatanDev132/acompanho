@@ -52,37 +52,6 @@ export default function Perfil({ navigation }) {
         </Pressable>
       </View>
 
-      {/* Barra de navegação */}
-      <View style={styles.navBar}>
-        <Pressable
-          style={styles.navItem}
-          onPress={() => navigation.navigate("Pesquisar")}
-        >
-          <Text style={styles.navText}>Pesquisar</Text>
-        </Pressable>
-
-        <Pressable
-          style={styles.navItem}
-          onPress={() => navigation.navigate("Favoritos")}
-        >
-          <Text style={styles.navText}>Favoritos</Text>
-        </Pressable>
-
-        <Pressable
-          style={styles.navItem}
-          onPress={() => navigation.navigate("Mensagens")}
-        >
-          <Text style={styles.navText}>Mensagens</Text>
-        </Pressable>
-
-        <Pressable
-          style={styles.navItem}
-          onPress={() => navigation.navigate("Conta")}
-        >
-          <Text style={styles.navText}>Conta</Text>
-        </Pressable>
-      </View>
-
       {/* Botão de logout */}
       <Pressable
         style={styles.logoutButton}
