@@ -78,6 +78,7 @@ export default function Login({ navigation }) {
           placeholder="Senha"
           style={estilos.input}
           secureTextEntry
+          maxLength={11}
         />
       </View>
       <Pressable onPress={login} style={estilos.botao}>

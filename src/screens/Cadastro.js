@@ -28,6 +28,7 @@ export default function Cadastro({ navigation }) {
           placeholder="Nome Completo"
           style={estilos.input}
           keyboardType="default"
+          onChangeText={(valor) => setNome(valor)}
         />
         <Text>Telefone</Text>
         <TextInput
@@ -36,13 +37,16 @@ export default function Cadastro({ navigation }) {
           style={estilos.input}
           keyboardType="phone-pad"
           value={telefone}
-          onChangeText={(valor) => {
-            setTelefone(valor);
-          }}
-          autoCompleteType="off"
+          onChangeText={(valor) => setTelefone(valor)}
         />
         <Text>Senha</Text>
-        <TextInput placeholder="Senha" style={estilos.input} secureTextEntry />
+        <TextInput
+          placeholder="Senha"
+          style={estilos.input}
+          maxLength={11}
+          secureTextEntry
+          onChangeText={(valor) => setSenha(valor)}
+        />
       </View>
       <Pressable style={estilos.botao}>
         <Text style={estilos.textoBotao}>Continuar</Text>
