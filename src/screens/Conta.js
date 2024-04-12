@@ -51,6 +51,45 @@ export default function Perfil({ navigation }) {
           <AntDesign name="right" size={24} color="#336691" />
         </Pressable>
       </View>
+
+      {/* Barra de navegação */}
+      <View style={styles.navBar}>
+        <Pressable
+          style={styles.navItem}
+          onPress={() => navigation.navigate("Pesquisar")}
+        >
+          <Text style={styles.navText}>Pesquisar</Text>
+        </Pressable>
+
+        <Pressable
+          style={styles.navItem}
+          onPress={() => navigation.navigate("Favoritos")}
+        >
+          <Text style={styles.navText}>Favoritos</Text>
+        </Pressable>
+
+        <Pressable
+          style={styles.navItem}
+          onPress={() => navigation.navigate("Mensagens")}
+        >
+          <Text style={styles.navText}>Mensagens</Text>
+        </Pressable>
+
+        <Pressable
+          style={styles.navItem}
+          onPress={() => navigation.navigate("Conta")}
+        >
+          <Text style={styles.navText}>Conta</Text>
+        </Pressable>
+      </View>
+
+      {/* Botão de logout */}
+      <Pressable
+        style={styles.logoutButton}
+        onPress={() => navigation.navigate("Sair")}
+      >
+        <Text style={styles.logoutText}>Sair</Text>
+      </Pressable>
     </SafeContainer>
   );
 }
@@ -104,5 +143,37 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     marginBottom: 10,
+  },
+
+  // Estilos para a barra de navegação
+  navBar: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+    backgroundColor: "#336691",
+    paddingVertical: 10,
+  },
+
+  navItem: {
+    alignItems: "center",
+  },
+
+  navText: {
+    color: "#fff",
+  },
+
+  // Estilos para o botão de logout
+  logoutButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#336691",
+    padding: 10,
+    borderRadius: 10,
+    marginTop: 20,
+  },
+
+  logoutText: {
+    color: "#fff",
   },
 });
