@@ -12,6 +12,7 @@ import Seguranca from "./src/screens/Seguranca";
 import Escolha from "./src/screens/Escolha";
 import Home from "./src/screens/Home";
 import Perfil from "./src/screens/Perfil";
+import Mensagem from "./src/screens/Mensagem";
 
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -73,6 +74,16 @@ function TabNavigator() {
       }}
     >
       <Tab.Screen 
+      name="Perfil" 
+      component={Perfil} 
+      options={{ 
+        headerShown: false,
+        tabBarIcon: () => {
+          return <Ionicons name="person" size={24} color="#737373" />
+        },
+      }}
+      />
+      <Tab.Screen 
       name="Home" 
       component={Home} 
       options={{ headerShown: false, tabBarIcon: () => {
@@ -80,12 +91,12 @@ function TabNavigator() {
       }}}
       />
       <Tab.Screen 
-      name="Perfil" 
-      component={Perfil} 
+      name="Mensagem" 
+      component={Mensagem} 
       options={{ 
-        headerShown: false,
+        headerShown: true,
         tabBarIcon: () => {
-          return <Ionicons name="person" size={24} color="#737373" />
+          return <Ionicons name="chatbubble-ellipses-outline" size={24} color="#737373" />
         },
       }}
       />
