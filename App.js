@@ -11,6 +11,7 @@ import Conectar from "./src/screens/Conectar";
 import Seguranca from "./src/screens/Seguranca";
 import Escolha from "./src/screens/Escolha";
 import Home from "./src/screens/Home";
+import Perfil from "./src/screens/Perfil";
 
 import { AntDesign } from '@expo/vector-icons';
 

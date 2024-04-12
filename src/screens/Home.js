@@ -19,15 +19,6 @@ export default function Home() {
   const bottomSheetRef = useRef(null);
   const snapPoints = useMemo(() => ["8%", "80%"], [])
 
-  const Estrelas = () => {
-    const [avaliacao, setAvaliacao] = useState(0);
-    return (
-      <StarRating 
-        rating={avaliacao}
-        onChange={setAvaliacao}
-      />
-    )
-  }
 
   return (
     <SafeContainer>
@@ -56,7 +47,7 @@ export default function Home() {
                         <Text style={estilos.nome}>Maria Tereza</Text>
                         <Text>São Paulo - SP</Text>
                         <StarRatingDisplay starSize={20} starStyle={{ marginRight: -7, right: 6}}
-                          rating={1}
+                          rating={4}
                           color='#336691'
                         />
                       </View>
