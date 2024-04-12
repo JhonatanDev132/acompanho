@@ -1,4 +1,4 @@
-import { Button, Pressable, StyleSheet, Text, View, LogBox } from 'react-native';
+import { Button, Pressable, StyleSheet, Text, View, LogBox, Image } from 'react-native';
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 
 
@@ -7,9 +7,12 @@ import BottomSheet, { BottomSheetScrollView } from '@gorhom/bottom-sheet';
 import { GestureHandlerRootView, PanGestureHandler } from 'react-native-gesture-handler';
 
 import StarRating, { StarRatingDisplay } from 'react-native-star-rating-widget';
+import { MaterialIcons } from '@expo/vector-icons';
 
 import MapView from 'react-native-maps';
 import SafeContainer from '../components/SafeContainer';
+
+import foto from '../../assets/images/ilustracao-procurar.png'
 
 export default function Home() {
 
@@ -46,7 +49,10 @@ export default function Home() {
 
 
                     <View style={estilos.conteudoBotton}>
-                      <View style={{left: 60}}>
+                      <View>
+                        <Image source={foto} style={estilos.foto} />
+                      </View>
+                      <View>
                         <Text style={estilos.nome}>Maria Tereza</Text>
                         <Text>São Paulo - SP</Text>
                         <StarRatingDisplay starSize={20} starStyle={{ marginRight: -7, right: 6}}
@@ -55,101 +61,10 @@ export default function Home() {
                         />
                       </View>
                       <View style={estilos.saibaMais}>
+                        <MaterialIcons name="favorite-border" size={24} color="#336691" />
                         <Text style={estilos.textoSaibaMais}>Saiba mais</Text>
                       </View>
                     </View>
-                    <View style={estilos.conteudoBotton}>
-                      <View style={{left: 60}}>
-                        <Text style={estilos.nome}>Maria Tereza</Text>
-                        <Text>São Paulo - SP</Text>
-                        <StarRatingDisplay starSize={20} starStyle={{ marginRight: -7, right: 6}}
-                          rating={4.5}
-                          color='#336691'
-                        />
-                      </View>
-                      <View style={estilos.saibaMais}>
-                        <Text style={estilos.textoSaibaMais}>Saiba mais</Text>
-                      </View>
-                    </View>
-                    <View style={estilos.conteudoBotton}>
-                      <View style={{left: 60}}>
-                        <Text style={estilos.nome}>Maria Tereza</Text>
-                        <Text>São Paulo - SP</Text>
-                        <StarRatingDisplay starSize={20} starStyle={{ marginRight: -7, right: 6}}
-                          rating={4.5}
-                          color='#336691'
-                        />
-                      </View>
-                      <View style={estilos.saibaMais}>
-                        <Text style={estilos.textoSaibaMais}>Saiba mais</Text>
-                      </View>
-                    </View>
-                    <View style={estilos.conteudoBotton}>
-                      <View style={{left: 60}}>
-                        <Text style={estilos.nome}>Maria Tereza</Text>
-                        <Text>São Paulo - SP</Text>
-                        <StarRatingDisplay starSize={20} starStyle={{ marginRight: -7, right: 6}}
-                          rating={4.5}
-                          color='#336691'
-                        />
-                      </View>
-                      <View style={estilos.saibaMais}>
-                        <Text style={estilos.textoSaibaMais}>Saiba mais</Text>
-                      </View>
-                    </View>
-                    <View style={estilos.conteudoBotton}>
-                      <View style={{left: 60}}>
-                        <Text style={estilos.nome}>Maria Tereza</Text>
-                        <Text>São Paulo - SP</Text>
-                        <StarRatingDisplay starSize={20} starStyle={{ marginRight: -7, right: 6}}
-                          rating={4.5}
-                          color='#336691'
-                        />
-                      </View>
-                      <View style={estilos.saibaMais}>
-                        <Text style={estilos.textoSaibaMais}>Saiba mais</Text>
-                      </View>
-                    </View>
-                    <View style={estilos.conteudoBotton}>
-                      <View style={{left: 60}}>
-                        <Text style={estilos.nome}>Maria Tereza</Text>
-                        <Text>São Paulo - SP</Text>
-                        <StarRatingDisplay starSize={20} starStyle={{ marginRight: -7, right: 6}}
-                          rating={4.5}
-                          color='#336691'
-                        />
-                      </View>
-                      <View style={estilos.saibaMais}>
-                        <Text style={estilos.textoSaibaMais}>Saiba mais</Text>
-                      </View>
-                    </View>
-                    <View style={estilos.conteudoBotton}>
-                      <View style={{left: 60}}>
-                        <Text style={estilos.nome}>Maria Tereza</Text>
-                        <Text>São Paulo - SP</Text>
-                        <StarRatingDisplay starSize={20} starStyle={{ marginRight: -7, right: 6}}
-                          rating={4.5}
-                          color='#336691'
-                        />
-                      </View>
-                      <View style={estilos.saibaMais}>
-                        <Text style={estilos.textoSaibaMais}>Saiba mais</Text>
-                      </View>
-                    </View>
-                    <View style={estilos.conteudoBotton}>
-                      <View style={{left: 60}}>
-                        <Text style={estilos.nome}>Maria Tereza</Text>
-                        <Text>São Paulo - SP</Text>
-                        <StarRatingDisplay starSize={20} starStyle={{ marginRight: -7, right: 6}}
-                          rating={4.5}
-                          color='#336691'
-                        />
-                      </View>
-                      <View style={estilos.saibaMais}>
-                        <Text style={estilos.textoSaibaMais}>Saiba mais</Text>
-                      </View>
-                    </View>
-
                   </View>
                   </BottomSheetScrollView>
             </BottomSheet>
@@ -206,17 +121,21 @@ const estilos = StyleSheet.create({
     borderColor: "#6D9DC5",
     borderWidth: 1,
     top: 10,
-    padding: 50,
+    padding: 20,
     width: "90%",
     flexDirection: "row",
-    gap: 10,
+    gap: 30,
   },
   saibaMais: {
-    top: 80,
-    left: 120
+    justifyContent: "space-between",
+    alignItems: "flex-end"
   },
   textoSaibaMais: {
     color: "#336691",
     fontSize: 15
+  },
+  foto: {
+    width: 100,
+    height: 100,
   }
 });

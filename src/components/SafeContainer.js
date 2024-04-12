@@ -6,6 +6,7 @@ import { useCallback } from "react";
 SplashScreen.preventAutoHideAsync();
 
 export default function SafeContainer({ children }) {
+
   const [fontsLoaded, fontError] = useFonts({
     Montserrat: require("../../assets/fonts/Montserrat-Regular.ttf"),
   });
