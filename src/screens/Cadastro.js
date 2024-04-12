@@ -9,21 +9,14 @@ import {
 import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
 import React, { useState } from "react";
+import { useRoute } from "@react-navigation/native";
 
 export default function Cadastro({ navigation }) {
   const [telefone, setTelefone] = useState("");
-
-  // Função para formatar o número de telefone conforme o usuário insere
-  const formatarTelefone = (input) => {
-    // Remove todos os caracteres não numéricos do input
-    const cleaned = ("" + input).replace(/\D/g, "");
-    // Formata o número de telefone: (xx) xxxxx-xxxx
-    const match = cleaned.match(/^(\d{2})(\d{5})(\d{4})$/);
-    if (match) {
-      return "(" + match[1] + ") " + match[2] + "-" + match[3];
-    }
-    return null;
-  };
+  const [senha, setSenha] = useState("");
+  const [nome, setNome] = useState("");
+  const route = useRoute();
+  const { escolha, email } = route.params;
 
   return (
     <SafeContainer>
@@ -39,11 +32,13 @@ export default function Cadastro({ navigation }) {
         <Text>Telefone</Text>
         <TextInput
           placeholder="(00) 00000-0000"
-          maxLength={15}
+          maxLength={11}
           style={estilos.input}
           keyboardType="phone-pad"
           value={telefone}
-          onChangeText={(text) => setTelefone(formatarTelefone(text))}
+          onChangeText={(valor) => {
+            setTelefone(valor);
+          }}
           autoCompleteType="off"
         />
         <Text>Senha</Text>
