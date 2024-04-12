@@ -7,12 +7,16 @@ import { AntDesign } from "@expo/vector-icons";
 import Business from "../../assets/images/Business.png";
 import Collaborator from "../../assets/images/Collaborator.png";
 import Document from "../../assets/images/Document.png";
+import LogoMini from "../../assets/images/logoMini.png";
 
 export default function Perfil({ navigation }) {
   return (
     <SafeContainer>
       <View style={styles.container}>
-        <Text style={styles.name}>Maria</Text>
+        <View style={styles.header}>
+          <Image source={LogoMini} style={styles.icon} />
+          <Text style={styles.name}>Maria</Text>
+        </View>
 
         <Pressable
           style={styles.option}
@@ -59,6 +63,10 @@ const styles = StyleSheet.create({
     width: "100%",
   },
 
+  header: {
+    alignItems: "center",
+  },
+
   name: {
     fontSize: 24,
     fontWeight: "bold",
@@ -90,5 +98,11 @@ const styles = StyleSheet.create({
   espacamento: {
     flexDirection: "row",
     alignItems: "center",
+  },
+
+  icon: {
+    width: 50,
+    height: 50,
+    marginBottom: 10,
   },
 });
