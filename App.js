@@ -14,6 +14,7 @@ import Home from "./src/screens/Home";
 import Perfil from "./src/screens/Perfil";
 
 import { AntDesign } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -77,6 +78,16 @@ function TabNavigator() {
       options={{ headerShown: false, tabBarIcon: () => {
        return <AntDesign name="home" size={25} color="#737373" />
       }}}
+      />
+      <Tab.Screen 
+      name="Perfil" 
+      component={Perfil} 
+      options={{ 
+        headerShown: false,
+        tabBarIcon: () => {
+          return <Ionicons name="person" size={24} color="#737373" />
+        },
+      }}
       />
     </Tab.Navigator>
   )
