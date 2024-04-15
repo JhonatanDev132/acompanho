@@ -26,7 +26,7 @@ import Perfilcuidador from "./src/screens/Perfilcuidador";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-/* Função para colocar icone na parte perfil do cuidador. Tipo header do Perfil Cuidador */
+/* Função para colocar icone na parte perfil . Tipo header do Perfil Cuidador */
 function TituloCabecalhoPerfil() {
   return (
     <View style={styles.containerTituloCabecalho}>
@@ -50,7 +50,7 @@ function TituloCabecalhoPerfil() {
 
 function StackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Perfilcuidador">
+    <Stack.Navigator initialRouteName="PerfilCuidador">
       <Stack.Screen
         name="Login"
         component={Login}
@@ -99,10 +99,9 @@ function StackNavigator() {
       />
 
       <Stack.Screen
-        name="Perfilcuidador"
+        name="PerfilCuidador"
         component={Perfilcuidador}
         options={{
-          // title: "Perfil",
           headerTitle: () => <TituloCabecalhoPerfil />,
           headerStyle: { backgroundColor: "#B8CDE2" },
           headerTitleAlign: "left",
