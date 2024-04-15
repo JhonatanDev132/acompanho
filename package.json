@@ -20,6 +20,7 @@
     "expo-status-bar": "~1.11.1",
     "react": "18.2.0",
     "react-native": "0.73.6",
+    "react-native-linear-gradient": "^2.8.3",
     "react-native-svg": "^14.1.0"
   },
   "devDependencies": {

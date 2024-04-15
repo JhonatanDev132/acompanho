@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Pressable, TextInput } from "react-native";
+import { Text, StyleSheet, View, Pressable, TextInput } from "react-native";
 import SafeContainer from "../components/SafeContainer";
+import { AntDesign } from "@expo/vector-icons"; // Importe o ícone AntDesign
 
 export default function EditarPerfil({ navigation }) {
-  // Estados para armazenar os textos sobre o usuário e o endereço
   const [aboutText, setAboutText] = useState("");
   const [address, setAddress] = useState("");
 
-  // Função para lidar com o salvamento das informações do perfil
   const handleSave = () => {
     console.log("Informações do perfil salvas:", aboutText, address);
     // Aqui você pode adicionar lógica para salvar as informações em algum lugar (ex: banco de dados)
@@ -17,7 +16,7 @@ export default function EditarPerfil({ navigation }) {
     <SafeContainer>
       <View style={styles.container}>
         <View style={styles.header}>
-          <Text style={styles.name}>Maria</Text>
+          <Text style={styles.perfil}>perfil</Text>
           <Pressable onPress={handleSave}>
             <Text style={styles.saveText}>Salvar</Text>
           </Pressable>
@@ -26,8 +25,10 @@ export default function EditarPerfil({ navigation }) {
         {/* Seção para a foto do perfil */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Foto do Perfil</Text>
-          {/* Aqui você pode adicionar a lógica para selecionar ou capturar uma foto do perfil */}
-          <View style={styles.profileImage}></View>
+          {/* Adicionando o ícone de câmera */}
+          <View style={styles.profileImage}>
+            <AntDesign name="camerao" size={24} color="black" />
+          </View>
         </View>
 
         <View style={styles.divider}></View>
@@ -93,6 +94,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    backgroundColor: "#f4fafe", // Cor de fundo para simular o gradiente
   },
   header: {
     flexDirection: "row",
@@ -100,7 +102,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginBottom: 20,
   },
-  name: {
+  perfil: {
     fontSize: 24,
     fontWeight: "bold",
   },
@@ -144,7 +146,7 @@ const styles = StyleSheet.create({
     height: 20,
     borderWidth: 1,
     borderColor: "#000",
-    marginRight: 10,
+    marginRight: 100,
   },
   profileImage: {
     // Estilos para a imagem do perfil
