@@ -5,7 +5,7 @@ import React from "react";
 export default function Perfilcuidador() {
   return (
     <View>
-      <Text>Perfilcuidador</Text>
+      <Text>oi</Text>
     </View>
   );
 }
