@@ -6,8 +6,8 @@ export default function Favoritos() {
   return (
     <SafeContainer>
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.name}>Favoritos</Text>
+        <View>
+          <Text>Favoritos</Text>
         </View>
       </View>
     </SafeContainer>
@@ -21,15 +21,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     width: "100%",
   },
-
-  header: {
-    alignItems: "center",
-    backgroundColor: "red",
-  },
-
-  name: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
-  },
 });
+
+/*
+Instalar: 
+ npm install @react-navigation/native@latest
+npm install react-native-gesture-handler@latest
+npm install react-native-reanimated@latest
+
+npx expo install react-native-gesture-handler
+ */

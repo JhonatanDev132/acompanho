@@ -19,7 +19,7 @@ const Tab = createBottomTabNavigator();
 
 function StackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Favoritos">
+    <Stack.Navigator initialRouteName="HomeScreen">
       <Stack.Screen
         name="Login"
         component={Login}
@@ -63,7 +63,7 @@ function StackNavigator() {
           title: "Favoritos",
           headerStyle: { backgroundColor: "#B8CDE2" },
           headerTitleAlign: "center",
-          headerTitleStyle: { fontWeight: "bold" },
+          headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
         }}
       />
     </Stack.Navigator>
