@@ -11,21 +11,14 @@ import SafeContainer from "../components/SafeContainer";
 import React, { useState } from "react";
 import LinearGradientComponent from "../components/LinearGradientComponent";
 
+import { useRoute } from "@react-navigation/native";
 
 export default function Cadastro({ navigation }) {
   const [telefone, setTelefone] = useState("");
-
-  // Função para formatar o número de telefone conforme o usuário insere
-  const formatarTelefone = (input) => {
-    // Remove todos os caracteres não numéricos do input
-    const cleaned = ("" + input).replace(/\D/g, "");
-    // Formata o número de telefone: (xx) xxxxx-xxxx
-    const match = cleaned.match(/^(\d{2})(\d{5})(\d{4})$/);
-    if (match) {
-      return "(" + match[1] + ") " + match[2] + "-" + match[3];
-    }
-    return null;
-  };
+  const [senha, setSenha] = useState("");
+  const [nome, setNome] = useState("");
+  const route = useRoute();
+  const { escolha, email } = route.params;
 
   return (
     <SafeContainer>

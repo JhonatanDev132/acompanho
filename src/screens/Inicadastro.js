@@ -5,13 +5,28 @@ import {
   Image,
   TextInput,
   Pressable,
+  Alert,
 } from "react-native";
 import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
 import React from "react";
 import LinearGradientComponent from "../components/LinearGradientComponent";
+import React, { useState } from "react";
+import { useRoute } from "@react-navigation/native";
 
 export default function Inicadastro({ navigation }) {
+  const [email, setEmail] = useState("");
+  const route = useRoute();
+  const { escolha } = route.params;
+
+  const verificarEmail = async () => {
+    if (!email) {
+      Alert.alert("Atenção!", "Preencha o e-mail!");
+      return;
+    }
+    navigation.navigate("Cadastro", { escolha, email });
+  };
+
   return (
     <SafeContainer>
       <LinearGradientComponent>

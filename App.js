@@ -13,6 +13,9 @@ import Escolha from "./src/screens/Escolha";
 import Home from "./src/screens/Home";
 import Perfil from "./src/screens/Perfil";
 import Mensagem from "./src/screens/Mensagem";
+import Inicadastro from "./src/screens/Inicadastro";
+import Cadastro from "./src/screens/Cadastro";
+import AreaLogada from "./src/screens/AreaLogada";
 
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';

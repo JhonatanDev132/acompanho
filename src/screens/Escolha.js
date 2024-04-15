@@ -8,10 +8,18 @@ import {
 } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import ilustracaoEscolha from "../../assets/images/ilustracao-escolha.png";
-import React from "react";
 import LinearGradientComponent from "../components/LinearGradientComponent";
+import React, { useState } from "react";
 
 export default function Escolha({ navigation }) {
+  const cuidador = () => {
+    navigation.navigate("Inicadastro", { escolha: "Cuidador" });
+  };
+
+  const usuario = () => {
+    navigation.navigate("Inicadastro", { escolha: "Usuario" });
+  };
+
   return (
     <SafeContainer>
       <LinearGradientComponent>
