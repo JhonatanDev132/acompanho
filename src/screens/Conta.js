@@ -50,15 +50,19 @@ export default function Perfil({ navigation }) {
           </View>
           <AntDesign name="right" size={24} color="#336691" />
         </Pressable>
-      </View>
 
-      {/* Botão de logout */}
-      <Pressable
-        style={styles.logoutButton}
-        onPress={() => navigation.navigate("Sair")}
-      >
-        <Text style={styles.logoutText}>Sair</Text>
-      </Pressable>
+        {/* Botão de logout */}
+
+        <View style={styles.centralizando}>
+          <Pressable
+            style={styles.botaoLogout}
+            onPress={() => navigation.navigate("Bemvindo")}
+          >
+            <AntDesign name="logout" size={24} color="black" />
+            <Text style={styles.logoutText}>Sair</Text>
+          </Pressable>
+        </View>
+      </View>
     </SafeContainer>
   );
 }
@@ -114,35 +118,26 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
 
-  // Estilos para a barra de navegação
-  navBar: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    alignItems: "center",
-    backgroundColor: "#336691",
-    paddingVertical: 10,
-  },
-
-  navItem: {
-    alignItems: "center",
-  },
-
-  navText: {
-    color: "#fff",
-  },
-
   // Estilos para o botão de logout
-  logoutButton: {
+  botaoLogout: {
+    paddingVertical: 12, // Aumentando o padding vertical para aumentar o tamanho do botão
+    paddingHorizontal: 40, // Adicionando padding horizontal para dar espaço ao ícone e ao texto
+    backgroundColor: "#6D9DC5", // Adicionando cor de fundo para torná-lo visualmente um botão
+    borderRadius: 10, // Adicionando bordas arredondadas para um visual mais amigável
     flexDirection: "row",
+    alignItems: "center", // Alinhando os itens verticalmente
+    justifyContent: "center", // Alinhando os itens horizontalmente
+  },
+
+  centralizando: {
     alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#336691",
-    padding: 10,
-    borderRadius: 10,
-    marginTop: 20,
+    marginTop: 50,
   },
 
   logoutText: {
-    color: "#fff",
+    fontSize: 18,
+    fontWeight: "700",
+    color: "black", // Alterando a cor do texto para torná-lo visível no botão
+    marginLeft: 8,
   },
 });
