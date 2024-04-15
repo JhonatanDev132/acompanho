@@ -13,6 +13,7 @@ import MapView from 'react-native-maps';
 import SafeContainer from '../components/SafeContainer';
 
 import foto from '../../assets/images/ilustracao-procurar.png'
+import LinearGradientComponent from '../components/LinearGradientComponent';
 
 export default function Home() {
 
