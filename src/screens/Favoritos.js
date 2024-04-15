@@ -5,24 +5,95 @@ import { AntDesign } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { ScrollView } from "react-native-gesture-handler";
 
-import logoAPI from "../../assets/images/foto-perfil.png";
+import fotoPerfil1 from "../../assets/images/foto-perfil-1.png";
+
+import fotoPerfil2 from "../../assets/images/foto-perfil-2.png";
+
+import fotoPerfil3 from "../../assets/images/foto-perfil-3.png";
 
 export default function Favoritos() {
   return (
     <SafeContainer>
       <View style={styles.container}>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          {/* Perfil 1 */}
           <View style={styles.caixa}>
             <View style={styles.rowContainer}>
               <Image
                 /*  resizeMode="contain" é para não corta a imagem, pois não é uadrada*/
                 resizeMode="contain"
-                source={logoAPI}
+                source={fotoPerfil1}
                 style={styles.perfil}
               />
               <View style={styles.nomeCidadeEstrela}>
-                <Text style={styles.nome}>Maria Tereza</Text>
+                <Text style={styles.nome}>Raquel Santos</Text>
                 <Text style={styles.cidade}>São Paulo - SP</Text>
+                <View style={styles.estrela}>
+                  <Entypo name="star" size={15} color="#336691" />
+                  <Entypo name="star" size={15} color="#336691" />
+                  <Entypo name="star" size={15} color="#336691" />
+                  <Entypo name="star" size={15} color="#336691" />
+                  <Entypo name="star" size={15} color="#336691" />
+                </View>
+              </View>
+
+              <View style={styles.coracao}>
+                <AntDesign name="heart" size={25} color="#336691" />
+              </View>
+
+              <Pressable
+                style={styles.botaoSaibaMais}
+                //onPress={}
+              >
+                <Text style={styles.textoBotao}>Saiba Mais</Text>
+              </Pressable>
+            </View>
+          </View>
+
+          {/* Prefil 2 */}
+          <View style={styles.caixa}>
+            <View style={styles.rowContainer}>
+              <Image
+                resizeMode="contain"
+                source={fotoPerfil2}
+                style={styles.perfil}
+              />
+              <View style={styles.nomeCidadeEstrela}>
+                <Text style={styles.nome}>Patrícia Oliveira</Text>
+                <Text style={styles.cidade}>São Paulo - SP</Text>
+                <View style={styles.estrela}>
+                  <Entypo name="star" size={15} color="#336691" />
+                  <Entypo name="star" size={15} color="#336691" />
+                  <Entypo name="star" size={15} color="#336691" />
+                  <Entypo name="star" size={15} color="#336691" />
+                  <Entypo name="star" size={15} color="#336691" />
+                </View>
+              </View>
+
+              <View style={styles.coracao}>
+                <AntDesign name="heart" size={25} color="#336691" />
+              </View>
+
+              <Pressable
+                style={styles.botaoSaibaMais}
+                //onPress={}
+              >
+                <Text style={styles.textoBotao}>Saiba Mais</Text>
+              </Pressable>
+            </View>
+          </View>
+
+          {/* Prefil 3 */}
+          <View style={styles.caixa}>
+            <View style={styles.rowContainer}>
+              <Image
+                resizeMode="contain"
+                source={fotoPerfil3}
+                style={styles.perfil}
+              />
+              <View style={styles.nomeCidadeEstrela}>
+                <Text style={styles.nome}>Marcos Gonçalves</Text>
+                <Text style={styles.cidade}>Recife - PE</Text>
                 <View style={styles.estrela}>
                   <Entypo name="star" size={15} color="#336691" />
                   <Entypo name="star" size={15} color="#336691" />
@@ -60,33 +131,32 @@ const styles = StyleSheet.create({
   },
 
   caixa: {
-    width: 320, // Largura da caixa
-    height: 100, // Altura da caixa
-    flexShrink: 0, // Impede a caixa de encolher
-    borderRadius: 10, // Raio de borda
+    width: 320,
+    borderRadius: 10,
     borderWidth: 1, // Espessura da borda
-    borderColor: "#6D9DC5", // Cor da borda
-    backgroundColor: "#FAFAFA", // Cor de fundo
-    shadowColor: "#000", // Cor da sombra
+    borderColor: "#6D9DC5",
+    backgroundColor: "#FAFAFA",
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 4 }, // Deslocamento da sombra
-    shadowOpacity: 0.25, // Opacidade da sombra
-    shadowRadius: 4, // Raio da sombra
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
     elevation: 4, // Elevação para Android
+    marginBottom: 20,
   },
 
   perfil: {
-    width: 80, // Largura do perfil
-    height: 80, // Altura do perfil
+    width: 80,
+    height: 80,
     margin: 10,
   },
 
   estrela: {
     flexDirection: "row", // Exibe os itens em uma linha
-    alignItems: "center", // Alinha os itens ao centro verticalmente
+    alignItems: "center",
   },
 
   nomeCidadeEstrela: {
-    marginLeft: 10, // Adiciona um espaçamento entre a imagem e o texto/estrelas
+    marginLeft: 5,
   },
 
   coracao: {
@@ -104,17 +174,14 @@ const styles = StyleSheet.create({
 
   botaoSaibaMais: {
     position: "absolute", // Define a posição como absoluta
-    right: 15, // Posiciona o botão à direita com 15px de margem
+    right: 15,
     top: "60%", // Posiciona abaixo do coração
-    paddingVertical: 8, // Padding vertical
-    //paddingHorizontal: 12, // Padding horizontal
-    //borderRadius: 5, // Raio da borda
-    //backgroundColor: "#336691", // Cor de fundo do botão
+    paddingVertical: 8,
   },
 
   textoBotao: {
     color: "#336691", // Cor do texto (branco)
-    fontSize: 13, // Tamanho do texto
+    fontSize: 14, // Tamanho do texto
     textAlign: "center",
     fontWeight: "600",
   },
@@ -132,7 +199,7 @@ const styles = StyleSheet.create({
 });
 
 /*
-Instalar: 
+nstalação necessária : 
 
 npm install @react-navigation/native@latest
 npm install react-native-gesture-handler@latest
