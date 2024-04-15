@@ -15,7 +15,7 @@ import Perfil from "./src/screens/Perfil";
 import Mensagem from "./src/screens/Mensagem";
 import Inicadastro from "./src/screens/Inicadastro";
 import Cadastro from "./src/screens/Cadastro";
-import AreaLogada from "./src/screens/AreaLogada";
+
 
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -25,7 +25,7 @@ const Tab = createBottomTabNavigator();
 
 function StackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Login">
+    <Stack.Navigator initialRouteName="Cadastro">
     <Stack.Screen
       name="Login"
       component={Login}
@@ -59,6 +59,11 @@ function StackNavigator() {
     <Stack.Screen
       name="HomeScreen"
       component={TabNavigator}
+      options={{ headerShown: false }}
+    />
+    <Stack.Screen
+      name="Cadastro"
+      component={Cadastro}
       options={{ headerShown: false }}
     />
   </Stack.Navigator>
@@ -113,7 +118,7 @@ export default function App() {
     <>
       <StatusBar barStyle="light-content" />
       <NavigationContainer>
-        <TabNavigator/>
+        <StackNavigator/>
       </NavigationContainer>
     </>
   );
