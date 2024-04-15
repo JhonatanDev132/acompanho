@@ -13,11 +13,11 @@ import React, { useState } from "react";
 
 export default function Escolha({ navigation }) {
   const cuidador = () => {
-    navigation.navigate("Inicadastro", { escolha: "Cuidador" });
+    navigation.navigate("IniCadastro", { escolha: "Cuidador" });
   };
 
   const usuario = () => {
-    navigation.navigate("Inicadastro", { escolha: "Usuario" });
+    navigation.navigate("IniCadastro", { escolha: "Usuario" });
   };
 
   return (
@@ -29,14 +29,14 @@ export default function Escolha({ navigation }) {
           </View>
           <Pressable
             style={estilos.botao}
-            onPress={() => navigation.navigate("Inicadastro")}
+            onPress={() => navigation.navigate("IniCadastro", cuidador)}
           >
             <Text style={estilos.textoBotao}>Sou um cuidador</Text>
           </Pressable>
           <Text style={{ fontWeight: "bold" }}>Ou</Text>
           <Pressable
             style={estilos.botao}
-            onPress={() => navigation.navigate("Inicadastro")}
+            onPress={() => navigation.navigate("Inicadastro", usuario)}
           >
             <Text style={estilos.textoBotao}>Estou à procura de um cuidador</Text>
           </Pressable>

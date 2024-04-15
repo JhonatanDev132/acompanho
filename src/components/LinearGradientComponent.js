@@ -17,11 +17,6 @@ export default function LinearGradientComponent({ children }) {
 }
 
 const estilos = StyleSheet.create({
-  container: {
-    paddingLeft: 0,
-    paddingRight: 0,
-    flex: 1,
-  },
   gradient: {
     flex: 1,
     alignItems: "center",

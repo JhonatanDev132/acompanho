@@ -9,12 +9,11 @@ import {
 } from "react-native";
 import Icon from "../../assets/icon.png";
 import SafeContainer from "../components/SafeContainer";
-import React from "react";
 import LinearGradientComponent from "../components/LinearGradientComponent";
 import React, { useState } from "react";
 import { useRoute } from "@react-navigation/native";
 
-export default function Inicadastro({ navigation }) {
+export default function IniCadastro({ navigation }) {
   const [email, setEmail] = useState("");
   const route = useRoute();
   const { escolha } = route.params;
