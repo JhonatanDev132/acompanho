@@ -19,7 +19,7 @@ const Tab = createBottomTabNavigator();
 
 function StackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="HomeScreen">
+    <Stack.Navigator initialRouteName="Favoritos">
       <Stack.Screen
         name="Login"
         component={Login}
