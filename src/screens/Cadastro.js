@@ -1,10 +1,11 @@
-import { Pressable, StyleSheet, Text, View, TextInput, Alert } from 'react-native'
+import { Pressable, StyleSheet, Text, View, TextInput, Alert, Image } from 'react-native'
 import React, { useState } from 'react'
 import SafeContainer from '../components/SafeContainer'
 import LinearGradientComponent from '../components/LinearGradientComponent'
 
 import { auth } from "../../firebase.config";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import logoMini from "../../assets/images/logoMini.png"
 
 export default function Cadastro({ navigation }) {
   const [nome, setNome] = useState("")
@@ -63,20 +64,22 @@ export default function Cadastro({ navigation }) {
   return (
     <SafeContainer>
       <LinearGradientComponent>
-        <View>
-          <Text>
+        <View style={styles.subcontainer}>
+          <Image source={logoMini} style={styles.logo} />
+
+          <Text style={styles.titulo}>
             Cadastro
           </Text>
 
           <View style={styles.formulario}>  
-              <TextInput placeholder='nome' onChangeText={(valor) => setNome(valor)}/>
+              <TextInput style={styles.input} placeholder='nome' onChangeText={(valor) => setNome(valor)}/>
               
-              <TextInput placeholder='email' onChangeText={(valor) => setEmail(valor)}/>
+              <TextInput style={styles.input} placeholder='email' onChangeText={(valor) => setEmail(valor)}/>
 
-              <TextInput placeholder='senha' secureTextEntry onChangeText={(valor) => setSenha(valor)}/>
+              <TextInput style={styles.input} placeholder='senha' secureTextEntry onChangeText={(valor) => setSenha(valor)}/>
           </View>
-          <Pressable onPress={cadastrar}>
-            <Text>Cadastrar</Text>
+          <Pressable style={styles.botao} onPress={cadastrar}>
+            <Text style={styles.textoBotao}>Cadastrar</Text>
           </Pressable>
         </View>
       </LinearGradientComponent>
@@ -84,4 +87,42 @@ export default function Cadastro({ navigation }) {
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  titulo: {
+    fontSize: 32,
+    fontWeight: "700",
+    textAlign: "center",
+    marginBottom: 40
+  },
+  formulario: {
+    gap: 15
+  },
+  input: {
+    fontSize: 20,
+    backgroundColor: "#F4FAFE",
+    width: 300,
+    padding: 10,
+    borderBottomColor: "#3079B5",
+    borderBottomWidth: 1.5
+  },
+  botao: {
+    backgroundColor: "#6D9DC5",
+    width: 120,
+    padding: 10,
+    borderRadius: 50,
+    marginTop: 30
+  },
+  textoBotao: {
+    textAlign: "center",
+    fontSize: 24,
+    fontWeight: "700"
+  },
+  subcontainer: {
+    alignItems: "center",
+    gap: 15,
+  },
+  logo: {
+    width: 65,
+    height: 50
+  }
+})
