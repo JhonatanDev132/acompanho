@@ -10,6 +10,7 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
+import { AntDesign } from "@expo/vector-icons";
 
 import Inicio from "./src/screens/Inicio";
 import Login from "./src/screens/Login";
@@ -18,10 +19,8 @@ import Conectar from "./src/screens/Conectar";
 import Seguranca from "./src/screens/Seguranca";
 import Escolha from "./src/screens/Escolha";
 import Home from "./src/screens/Home";
-
-import { AntDesign } from "@expo/vector-icons";
 import Favoritos from "./src/screens/Favoritos";
-import Perfilcuidador from "./src/screens/Perfilcuidador";
+import Perfilgeral from "./src/screens/Perfilgeral";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -50,7 +49,7 @@ function TituloCabecalhoPerfil() {
 
 function StackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="PerfilCuidador">
+    <Stack.Navigator initialRouteName="Favoritos">
       <Stack.Screen
         name="Login"
         component={Login}
@@ -76,6 +75,7 @@ function StackNavigator() {
         component={Conectar}
         options={{ headerShown: false }}
       />
+
       <Stack.Screen
         name="Seguranca"
         component={Seguranca}
@@ -91,17 +91,31 @@ function StackNavigator() {
         name="Favoritos"
         component={Favoritos}
         options={{
-          title: "Favoritos",
+          headerTitle: () => <TituloCabecalhoPerfil />,
           headerStyle: { backgroundColor: "#B8CDE2" },
           headerTitleAlign: "center",
           headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
         }}
       />
 
+      {/* 
       <Stack.Screen
-        name="PerfilCuidador"
-        component={Perfilcuidador}
+        name="Favoritos"
+        component={Favoritos}
         options={{
+          title: "Favoritos",
+          headerStyle: { backgroundColor: "#B8CDE2" },
+          headerTitleAlign: "center",
+          headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
+        }}
+      />
+       */}
+
+      <Stack.Screen
+        name="Perfilgeral"
+        component={Perfilgeral}
+        options={{
+          title: "Favoritos",
           headerTitle: () => <TituloCabecalhoPerfil />,
           headerStyle: { backgroundColor: "#B8CDE2" },
           headerTitleAlign: "left",

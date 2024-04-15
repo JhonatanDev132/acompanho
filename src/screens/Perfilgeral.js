@@ -2,10 +2,10 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-export default function Perfilcuidador() {
+export default function Perfilgeral() {
   return (
     <View>
-      <Text>Perfilcuidador</Text>
+      <Text>Perfilgeral kkkkkkkkkkkkkkkkk</Text>
     </View>
   );
 }
