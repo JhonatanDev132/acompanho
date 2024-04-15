@@ -1,4 +1,12 @@
-import { SafeAreaView, StatusBar, StyleSheet } from "react-native";
+import {
+  Image,
+  Pressable,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -13,13 +21,36 @@ import Home from "./src/screens/Home";
 
 import { AntDesign } from "@expo/vector-icons";
 import Favoritos from "./src/screens/Favoritos";
+import Perfilcuidador from "./src/screens/Perfilcuidador";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
+/* Função para colocar icone na parte perfil do cuidador. Tipo header do Perfil Cuidador */
+function TituloCabecalhoPerfil() {
+  return (
+    <View style={styles.containerTituloCabecalho}>
+      <View style={styles.containerTituloCabecalhoEsquerda}>
+        {/* Botão para voltar para favoritos */}
+        <Pressable
+        //onPress={}
+        >
+          <AntDesign name="left" size={20} color="black" />
+        </Pressable>
+        <Text style={styles.titulo}>Perfil</Text>
+      </View>
+
+      <View style={styles.containerTituloCabecalhoDireita}>
+        <AntDesign name="sharealt" size={25} color="black" />
+        <AntDesign name="hearto" size={25} color="#336691" />
+      </View>
+    </View>
+  );
+}
+
 function StackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Favoritos">
+    <Stack.Navigator initialRouteName="Perfilcuidador">
       <Stack.Screen
         name="Login"
         component={Login}
@@ -66,6 +97,18 @@ function StackNavigator() {
           headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
         }}
       />
+
+      <Stack.Screen
+        name="Perfilcuidador"
+        component={Perfilcuidador}
+        options={{
+          // title: "Perfil",
+          headerTitle: () => <TituloCabecalhoPerfil />,
+          headerStyle: { backgroundColor: "#B8CDE2" },
+          headerTitleAlign: "left",
+          headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
+        }}
+      />
     </Stack.Navigator>
   );
 }
@@ -109,4 +152,29 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+
+  /* Começo CSS Perfil Cuidador */
+
+  containerTituloCabecalho: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    paddingHorizontal: 10,
+  },
+  titulo: {
+    fontWeight: "bold",
+    fontSize: 24,
+  },
+  containerTituloCabecalhoEsquerda: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 20,
+  },
+  containerTituloCabecalhoDireita: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 20,
+  },
+  /* FIM CSS Perfil cuidador */
 });
