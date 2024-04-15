@@ -18,7 +18,7 @@ import LinearGradientComponent from '../components/LinearGradientComponent';
 export default function Home() {
 
   const bottomSheetRef = useRef(null);
-  const snapPoints = useMemo(() => ["8%", "80%"], [])
+  const snapPoints = useMemo(() => ["12%", "80%"], [])
 
 
   return (
@@ -73,7 +73,7 @@ const estilos = StyleSheet.create({
     flex: 1,
     paddingLeft: 0,
     paddingRight: 0,
-    alignItems: "center"
+    alignItems: "center",
   },
   mapa: {
     flex: 1,
