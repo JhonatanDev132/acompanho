@@ -1,9 +1,16 @@
-import { SafeAreaView, StatusBar, StyleSheet } from "react-native";
+import {
+  Image,
+  Pressable,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import { useState, useEffect, useCallback } from "react";
-
+import { AntDesign } from "@expo/vector-icons";
 import Inicio from "./src/screens/Inicio";
 import Login from "./src/screens/Login";
 import Procurar from "./src/screens/Procurar";
@@ -19,9 +26,30 @@ import Chat from "./src/screens/Chat";
 
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import Favoritos from "./src/screens/Favoritos";
+import Perfilgeral from "./src/screens/Perfilgeral";
+import Excluirconta from "./src/screens/Excluirconta";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
+
+/* Função para colocar icone na parte perfil . Tipo header do Perfil Cuidador */
+function TituloCabecalhoPerfil() {
+  return (
+    <View style={styles.containerTituloCabecalho}>
+      <View style={styles.containerTituloCabecalhoEsquerda}>
+        {/* Botão para voltar para favoritos */}
+
+        <Text style={styles.titulo}>Perfil</Text>
+      </View>
+
+      <View style={styles.containerTituloCabecalhoDireita}>
+        <AntDesign name="sharealt" size={25} color="#030303" />
+        <AntDesign name="hearto" size={25} color="#336691" />
+      </View>
+    </View>
+  );
+}
 
 function StackNavigator() {
   return (
@@ -78,7 +106,40 @@ function StackNavigator() {
       options={{ headerShown: false }}
     />
     
-  </Stack.Navigator>
+    <Stack.Screen
+        name="Favoritos"
+        component={Favoritos}
+        options={{
+          title: "Favoritos",
+          headerStyle: { backgroundColor: "#B8CDE2" },
+          headerTitleAlign: "center",
+          headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
+        }}
+      />
+
+      <Stack.Screen
+        name="Perfilgeral"
+        component={Perfilgeral}
+        options={{
+          title: "Favoritos",
+          headerTitle: () => <TituloCabecalhoPerfil />,
+          headerStyle: { backgroundColor: "#B8CDE2" },
+          headerTitleAlign: "left",
+          headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
+        }}
+      />
+
+      <Stack.Screen
+        name="Excluirconta"
+        component={Excluirconta}
+        options={{
+          title: "Conta",
+          headerStyle: { backgroundColor: "#B8CDE2" },
+          headerTitleAlign: "center",
+          headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
+        }}
+      />
+    </Stack.Navigator>
   )
 }
 
@@ -90,7 +151,7 @@ function TabNavigator() {
         tabBarActiveBackgroundColor: "#FAFAFA",
         tabBarInactiveBackgroundColor: "#FAFAFA",
         tabBarActiveTintColor: "#737373",
-        tabBarInactiveTintColor: "#737373"
+        tabBarInactiveTintColor: "#737373",
       }}
     >
 
@@ -122,7 +183,7 @@ function TabNavigator() {
       }}
       />
     </Tab.Navigator>
-  )
+  );
 }
 
 export default function App() {
@@ -137,3 +198,34 @@ export default function App() {
   );
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+
+  /* Começo CSS Perfil Cuidador */
+
+  containerTituloCabecalho: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    paddingHorizontal: 10,
+  },
+  titulo: {
+    fontWeight: "bold",
+    fontSize: 24,
+    color: "#030303",
+  },
+  containerTituloCabecalhoEsquerda: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 20,
+  },
+  containerTituloCabecalhoDireita: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 20,
+  },
+  /* FIM CSS Perfil cuidador */
+});
