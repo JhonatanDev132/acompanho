@@ -7,7 +7,7 @@ import Maria from "../../assets/images/maria.png";
 import { getFirestore, collection, getDocs} from 'firebase/firestore';
 
 
-export default function Mensagem() {
+export default function Mensagem({ navigation }) {
   const [dados, setDados] = useState([]);
   const db = getFirestore();
 

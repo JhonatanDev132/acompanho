@@ -111,7 +111,16 @@ function TabNavigator() {
        return <AntDesign name="home" size={25} color="#737373" />
       }}}
       />
-      
+      <Tab.Screen 
+      name="Mensagem" 
+      component={Mensagem} 
+      options={{ 
+        headerShown: false,
+        tabBarIcon: () => {
+          return <Ionicons name="chatbubble-ellipses-outline" size={24} color="#737373" />
+        },
+      }}
+      />
     </Tab.Navigator>
   )
 }
