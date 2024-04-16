@@ -100,6 +100,16 @@ export default function Perfilgeral() {
                 <Text style={styles.experiencia}>Experiência</Text>
                 <Text style={styles.experienciaTempo}> 2 anos</Text>
               </View>
+
+              <View style={styles.favoritosCaixa}>
+                <AntDesign name="hearto" size={20} color="#333" />
+                <Text style={styles.experiencia}>Favoritos</Text>
+              </View>
+
+              <View style={styles.favoritosCaixa}>
+                <Text style={styles.experiencia}>0</Text>
+                <Text style={styles.experiencia}>Avaliação</Text>
+              </View>
             </View>
           </ScrollView>
         </LinearGradientComponent>
@@ -261,6 +271,19 @@ const styles = StyleSheet.create({
     flexDirection: "row", // Alinha os itens em uma linha
     alignItems: "center", // Alinha os itens ao centro verticalmente
     justifyContent: "space-between", // Espaço entre os itens
+    borderRadius: 10,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "#3079B5",
+    padding: 10,
+    marginTop: 20,
+  },
+
+  favoritosCaixa: {
+    flexDirection: "row", // Alinha os itens em uma linha
+    alignItems: "center", // Alinha os itens ao centro verticalmente
+    gap: 10,
     borderRadius: 10,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
