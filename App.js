@@ -91,25 +91,12 @@ function StackNavigator() {
         name="Favoritos"
         component={Favoritos}
         options={{
-          headerTitle: () => <TituloCabecalhoPerfil />,
-          headerStyle: { backgroundColor: "#B8CDE2" },
-          headerTitleAlign: "center",
-          headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
-        }}
-      />
-
-      {/* 
-      <Stack.Screen
-        name="Favoritos"
-        component={Favoritos}
-        options={{
           title: "Favoritos",
           headerStyle: { backgroundColor: "#B8CDE2" },
           headerTitleAlign: "center",
           headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
         }}
       />
-       */}
 
       <Stack.Screen
         name="Perfilgeral"
