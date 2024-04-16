@@ -80,6 +80,11 @@ export default function Perfilgeral() {
                   checkedColor="#336691" // Cor de fundo quando selecionado
                 />
               </View>
+
+              <Text style={styles.certificados}>Certificados:</Text>
+              <Text style={styles.certificadosTexto}>
+                Verificado por Acompanho
+              </Text>
             </View>
           </ScrollView>
         </LinearGradientComponent>
@@ -192,6 +197,20 @@ const styles = StyleSheet.create({
     fontFamily: "Montserrat",
     color: "#333",
     fontSize: 16,
+  },
+
+  certificados: {
+    paddingTop: 20,
+    fontWeight: "700",
+    color: "#333",
+    fontSize: 16,
+    fontFamily: "Montserrat",
+  },
+
+  certificadosTexto: {
+    fontSize: 14,
+    fontFamily: "Montserrat",
+    color: "#737373",
   },
 });
 
