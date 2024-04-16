@@ -49,7 +49,7 @@ export default function Cadastro({ navigation }) {
         {
           style: "default",
           text: "Ir para área logada",
-          onPress: () => navigation.replace("HomeScreen")
+          onPress: () => navigation.replace("Aceitar")
         }
       ])
 
@@ -96,6 +96,9 @@ export default function Cadastro({ navigation }) {
           <Pressable style={styles.botao} onPress={cadastrar}>
             <Text style={styles.textoBotao}>Cadastrar</Text>
           </Pressable>
+          <Text onPress={() => navigation.navigate("Login")}>
+            Já tenho cadastro
+          </Text>
         </View>
       </LinearGradientComponent>
     </SafeContainer>

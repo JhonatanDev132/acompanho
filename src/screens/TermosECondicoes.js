@@ -8,51 +8,52 @@ import {
   Image,
 } from "react-native";
 import SafeContainer from "../components/SafeContainer";
+import LinearGradientComponent from "../components/LinearGradientComponent";
 
 export default function TermosECondicoes({ navigation }) {
   return (
     <SafeContainer>
-      <View style={estilos.container}>
-        <ScrollView>
-          <Text style={estilos.titulo}>Termos e Condições</Text>
-          <View style={estilos.formulario}>
-            <Text style={estilos.texto}>
-              <Text style={estilos.textoBold}>Definições:</Text> Estes termos se
-              aplicam à parceria entre Acompanho, cuidador e famílias. Ao usar
-              os serviços do Acompanho, você concorda com estes termos.
-            </Text>
-            <Text style={estilos.texto}>
-              <Text style={estilos.textoBold}>Registro e Uso:</Text> A Família
-              faz o cadastro no Acompanho para encontrar um cuidador que irá
-              fazer o acompanhamento do idoso em consultas médicas.
-            </Text>
-            <Text style={estilos.texto}>
-              <Text style={estilos.textoBold}>Obrigações:</Text> A família
-              escolhe o cuidador adequado, garantindo informações precisas. Os
-              cuidadores cumprem suas obrigações legais e prestam os serviços
-              conforme combinado.
-            </Text>
-            <Text style={estilos.texto}>
-              <Text style={estilos.textoBold}>Responsabilidade:</Text> O
-              Acompanho se esforça para prestar serviços de qualidade, mas não é
-              responsável por falhas na execução das atividades.
-            </Text>
-            <Text style={estilos.texto}>
-              <Text style={estilos.textoBold}>Proteção de Dados:</Text> Os dados
-              pessoais são tratados com confidencialidade, exceto quando
-              necessário por lei ou contrato.
-            </Text>
-          </View>
-          <View style={estilos.botaoCentro}>
-            <Pressable
-              style={estilos.botao}
-              onPress={() => navigation.navigate("Conta")}
-            >
-              <Text style={estilos.textoBotao}>Voltar</Text>
-            </Pressable>
-          </View>
-        </ScrollView>
-      </View>
+      <LinearGradientComponent>
+        <View style={estilos.container}>
+            <Text style={estilos.titulo}>Termos e Condições</Text>
+            <View style={estilos.formulario}>
+              <Text style={estilos.texto}>
+                <Text style={estilos.textoBold}>Definições:</Text> Estes termos se
+                aplicam à parceria entre Acompanho, cuidador e famílias. Ao usar
+                os serviços do Acompanho, você concorda com estes termos.
+              </Text>
+              <Text style={estilos.texto}>
+                <Text style={estilos.textoBold}>Registro e Uso:</Text> A Família
+                faz o cadastro no Acompanho para encontrar um cuidador que irá
+                fazer o acompanhamento do idoso em consultas médicas.
+              </Text>
+              <Text style={estilos.texto}>
+                <Text style={estilos.textoBold}>Obrigações:</Text> A família
+                escolhe o cuidador adequado, garantindo informações precisas. Os
+                cuidadores cumprem suas obrigações legais e prestam os serviços
+                conforme combinado.
+              </Text>
+              <Text style={estilos.texto}>
+                <Text style={estilos.textoBold}>Responsabilidade:</Text> O
+                Acompanho se esforça para prestar serviços de qualidade, mas não é
+                responsável por falhas na execução das atividades.
+              </Text>
+              <Text style={estilos.texto}>
+                <Text style={estilos.textoBold}>Proteção de Dados:</Text> Os dados
+                pessoais são tratados com confidencialidade, exceto quando
+                necessário por lei ou contrato.
+              </Text>
+            </View>
+            <View style={estilos.botaoCentro}>
+              <Pressable
+                style={estilos.botao}
+                onPress={() => navigation.navigate("Aceitar")}
+              >
+                <Text style={estilos.textoBotao}>Voltar</Text>
+              </Pressable>
+            </View>
+        </View>
+      </LinearGradientComponent>
     </SafeContainer>
   );
 }
@@ -84,6 +85,7 @@ const estilos = StyleSheet.create({
   botaoCentro: {
     alignItems: "center",
     marginBottom: 16,
+    bottom: -250
   },
   textoBotao: {
     fontSize: 18,
@@ -102,5 +104,6 @@ const estilos = StyleSheet.create({
   },
   container: {
     flex: 1,
+    gap: 20
   },
 });

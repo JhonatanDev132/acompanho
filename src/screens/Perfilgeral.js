@@ -11,7 +11,7 @@ import { CheckBox } from "react-native-elements"; // Importe o CheckBox da bibli
 import fotoPerfil1 from "../../assets/images/foto-perfil-1.png";
 import LinearGradientComponent from "../components/LinearGradientComponent";
 
-export default function Perfilgeral({ navigate }) {
+export default function Perfilgeral({ navigation }) {
   const [manha, setManha] = useState(true); // Inicializado como true
   const [tarde, setTarde] = useState(true); // Inicializado como true
   const [noite, setNoite] = useState(false);
@@ -120,7 +120,7 @@ export default function Perfilgeral({ navigate }) {
             <View style={styles.botaoEntreContato}>
               <Pressable
                 style={styles.botao}
-                // onPress={() => navigation.navigate("Escolha")}
+                onPress={() => navigation.navigate("Mensagem") }
               >
                 <Text style={styles.textoBotao}>Entre em contato</Text>
               </Pressable>

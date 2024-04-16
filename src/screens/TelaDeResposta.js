@@ -1,36 +1,40 @@
 import React from "react";
 import { StyleSheet, Text, View, Pressable, Image } from "react-native";
 import SafeContainer from "../components/SafeContainer";
+import LinearGradientComponent from "../components/LinearGradientComponent";
+import ilustracao from "../../assets/images/ilustracao-conectar.png"
 
 export default function TelaDeResposta({ navigation }) {
   return (
     <SafeContainer>
-      <Text style={estilos.titulo}>Cadastro bem sucedido</Text>
-      <View style={estilos.formulario}>
-        <Text style={estilos.texto}>
-          Para se conectar com outros membros você deve completar seu perfil.
-        </Text>
-      </View>
-      <View style={estilos.botaoCentro}>
-        <Pressable
-          style={estilos.botao}
-          onPress={() => navigation.navigate("Home")}
-        >
-          <Text style={estilos.textoBotao}>Mais tarde</Text>
-        </Pressable>
-        <Pressable
-          style={estilos.botao}
-          onPress={() => navigation.navigate("Profile")}
-        >
-          <Text style={estilos.textoBotao}>Completar Perfil</Text>
-        </Pressable>
-      </View>
-      <View style={estilos.imagemContainer}>
-        <Image
-          style={estilos.imagem}
-          source={require("C:/mobile/acompanho/assets/images/ilustracao-conectar.png")}
-        />
-      </View>
+      <LinearGradientComponent>
+        <Text style={estilos.titulo}>Cadastro bem sucedido</Text>
+        <View style={estilos.formulario}>
+          <Text style={estilos.texto}>
+            Para se conectar com outros membros você deve completar seu perfil.
+          </Text>
+        </View>
+        <View style={estilos.botaoCentro}>
+          <Pressable
+            style={estilos.botao}
+            onPress={() => navigation.navigate("Home")}
+          >
+            <Text style={estilos.textoBotao}>Mais tarde</Text>
+          </Pressable>
+          <Pressable
+            style={estilos.botao}
+            onPress={() => navigation.navigate("Perfil")}
+          >
+            <Text style={estilos.textoBotao}>Completar Perfil</Text>
+          </Pressable>
+        </View>
+        <View style={estilos.imagemContainer}>
+          <Image
+            style={estilos.imagem}
+            source={ilustracao}
+          />
+        </View>
+      </LinearGradientComponent>
     </SafeContainer>
   );
 }
@@ -78,7 +82,7 @@ const estilos = StyleSheet.create({
     alignItems: "center",
   },
   imagem: {
-    width: 200,
+    width: 185,
     height: 200,
     marginTop: 50,
   },

@@ -31,7 +31,7 @@ export default function Login({ navigation }) {
     try {
       await signInWithEmailAndPassword(auth, email, senha);
       console.log("Login feito com sucesso!");
-      navigation.replace("AreaLogada");
+      navigation.replace("Aceitar")
     } catch (error) {
       console.error(error.code);
       let mensagem;

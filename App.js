@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Text,
+  View
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -16,18 +17,15 @@ import Conectar from "./src/screens/Conectar";
 import Seguranca from "./src/screens/Seguranca";
 import Escolha from "./src/screens/Escolha";
 import Home from "./src/screens/Home";
-import Perfil from "./src/screens/Perfil";
 import Mensagem from "./src/screens/Mensagem";
 import Cadastro from "./src/screens/Cadastro";
 import Chat from "./src/screens/Chat";
-import Bemvindo from "./src/screens/Bemvindo";
 import Aceitar from "./src/screens/Aceitar";
 import TermosECondicoes from "./src/screens/TermosECondicoes";
-import TelaDeResposta from "./src/screens/TelaDeResposta";
 import Conta from "./src/screens/Conta";
 import PerfilIdosoFamilia from "./src/screens/PerfilIdosoFamilia";
 
-
+import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import Favoritos from "./src/screens/Favoritos";
@@ -37,23 +35,22 @@ import Excluirconta from "./src/screens/Excluirconta";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-/* Função para colocar icone na parte perfil . Tipo header do Perfil Cuidador */
-// function TituloCabecalhoPerfil() {
-//   return (
-//     <View style={styles.containerTituloCabecalho}>
-//       <View style={styles.containerTituloCabecalhoEsquerda}>
-//         {/* Botão para voltar para favoritos */}
+    function TituloCabecalhoPerfil() {
+   return (
+     <View style={styles.containerTituloCabecalho}>
+       <View style={styles.containerTituloCabecalhoEsquerda}>
+         {/* Botão para voltar para favoritos */}
 
-//         <Text style={styles.titulo}>Perfil</Text>
-//       </View>
+         <Text style={styles.titulo}>Perfil</Text>
+       </View>
 
-//       <View style={styles.containerTituloCabecalhoDireita}>
-//         <AntDesign name="sharealt" size={25} color="#030303" />
-//         <AntDesign name="hearto" size={25} color="#336691" />
-//       </View>
-//     </View>
-//   );
-// }
+       <View style={styles.containerTituloCabecalhoDireita}>
+         <AntDesign name="sharealt" size={25} color="#030303" />
+         <AntDesign name="hearto" size={25} color="#336691" />
+       </View>
+     </View>
+   );
+ }
 
 function StackNavigator() {
   return (
@@ -110,28 +107,6 @@ function StackNavigator() {
         options={{ headerShown: false }}
       />
 
-      <Stack.Screen
-        name="Favoritos"
-        component={Favoritos}
-        options={{
-          title: "Favoritos",
-          headerStyle: { backgroundColor: "#B8CDE2" },
-          headerTitleAlign: "center",
-          headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
-        }}
-      />
-
-      <Stack.Screen
-        name="Perfilgeral"
-        component={Perfilgeral}
-        options={{
-          title: "Favoritos",
-          headerTitle: () => <TituloCabecalhoPerfil />,
-          headerStyle: { backgroundColor: "#B8CDE2" },
-          headerTitleAlign: "left",
-          headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
-        }}
-      />
 
       <Stack.Screen
         name="Excluirconta"
@@ -145,41 +120,6 @@ function StackNavigator() {
       />
 
       <Stack.Screen
-        name="Login"
-        component={Login}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Inicio"
-        component={Inicio}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Escolha"
-        component={Escolha}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Procurar"
-        component={Procurar}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Conectar"
-        component={Conectar}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Seguranca"
-        component={Seguranca}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="Bemvindo"
-        component={Bemvindo}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
         name="Aceitar"
         component={Aceitar}
         options={{ headerShown: false }}
@@ -187,11 +127,6 @@ function StackNavigator() {
       <Stack.Screen
         name="TermosECondicoes"
         component={TermosECondicoes}
-        options={{ headerShown: false }}
-      />
-      <Stack.Screen
-        name="TelaDeResposta"
-        component={TelaDeResposta}
         options={{ headerShown: false }}
       />
       <Stack.Screen
@@ -253,7 +188,7 @@ function TabNavigator() {
 
     <Tab.Navigator initialRouteName="Home"
       screenOptions={{
-        tabBarActiveBackgroundColor: "#FAFAFA",
+        tabBarActiveBackgroundColor: "#B8CDE2",
         tabBarInactiveBackgroundColor: "#FAFAFA",
         tabBarActiveTintColor: "#737373",
         tabBarInactiveTintColor: "#737373",
@@ -261,10 +196,14 @@ function TabNavigator() {
     >
 
       <Tab.Screen
-        name="Perfil"
-        component={Perfil}
+        name="Perfilgeral"
+        component={Perfilgeral}
         options={{
-          headerShown: false,
+          title: "Perfil",
+          headerTitle: () => <TituloCabecalhoPerfil />,
+          headerStyle: { backgroundColor: "#B8CDE2" },
+          headerTitleAlign: "left",
+          headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
           tabBarIcon: () => {
             return <Ionicons name="person" size={24} color="#737373" />
           },
@@ -274,7 +213,8 @@ function TabNavigator() {
         name="Home"
         component={Home}
         options={{
-          headerShown: false, tabBarIcon: () => {
+          headerShown: false, 
+          tabBarIcon: () => {
             return <AntDesign name="home" size={25} color="#737373" />
           }
         }}
@@ -287,6 +227,19 @@ function TabNavigator() {
           tabBarIcon: () => {
             return <Ionicons name="chatbubble-ellipses-outline" size={24} color="#737373" />
           },
+        }}
+      />
+      <Tab.Screen
+        name="Favoritos"
+        component={Favoritos}
+        options={{
+          title: "Favoritos",
+          headerStyle: { backgroundColor: "#B8CDE2" },
+          headerTitleAlign: "center",
+          headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
+          tabBarIcon: () => {
+            return <MaterialIcons name="favorite-border" size={24} color="#737373" />
+          }
         }}
       />
     </Tab.Navigator>

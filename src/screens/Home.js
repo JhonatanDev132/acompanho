@@ -13,12 +13,11 @@ import MapView from 'react-native-maps';
 import SafeContainer from '../components/SafeContainer';
 
 import foto from '../../assets/images/ilustracao-procurar.png'
-import LinearGradientComponent from '../components/LinearGradientComponent';
 
 export default function Home() {
 
   const bottomSheetRef = useRef(null);
-  const snapPoints = useMemo(() => ["12%", "80%"], [])
+  const snapPoints = useMemo(() => ["8.5%", "80%"], [])
 
 
   return (
@@ -57,6 +56,102 @@ export default function Home() {
                         <Text style={estilos.textoSaibaMais}>Saiba mais</Text>
                       </View>
                     </View>
+
+
+                    <View style={estilos.conteudoBotton}>
+                      <View>
+                        <Image source={foto} style={estilos.foto} />
+                      </View>
+                      <View>
+                        <Text style={estilos.nome}>Maria Tereza</Text>
+                        <Text>São Paulo - SP</Text>
+                        <StarRatingDisplay starSize={20} starStyle={{ marginRight: -7, right: 6}}
+                          rating={4}
+                          color='#336691'
+                        />
+                      </View>
+                      <View style={estilos.saibaMais}>
+                        <MaterialIcons name="favorite-border" size={24} color="#336691" />
+                        <Text style={estilos.textoSaibaMais}>Saiba mais</Text>
+                      </View>
+                    </View>
+
+
+                    <View style={estilos.conteudoBotton}>
+                      <View>
+                        <Image source={foto} style={estilos.foto} />
+                      </View>
+                      <View>
+                        <Text style={estilos.nome}>Maria Tereza</Text>
+                        <Text>São Paulo - SP</Text>
+                        <StarRatingDisplay starSize={20} starStyle={{ marginRight: -7, right: 6}}
+                          rating={4}
+                          color='#336691'
+                        />
+                      </View>
+                      <View style={estilos.saibaMais}>
+                        <MaterialIcons name="favorite-border" size={24} color="#336691" />
+                        <Text style={estilos.textoSaibaMais}>Saiba mais</Text>
+                      </View>
+                    </View>
+
+
+                    <View style={estilos.conteudoBotton}>
+                      <View>
+                        <Image source={foto} style={estilos.foto} />
+                      </View>
+                      <View>
+                        <Text style={estilos.nome}>Maria Tereza</Text>
+                        <Text>São Paulo - SP</Text>
+                        <StarRatingDisplay starSize={20} starStyle={{ marginRight: -7, right: 6}}
+                          rating={4}
+                          color='#336691'
+                        />
+                      </View>
+                      <View style={estilos.saibaMais}>
+                        <MaterialIcons name="favorite-border" size={24} color="#336691" />
+                        <Text style={estilos.textoSaibaMais}>Saiba mais</Text>
+                      </View>
+                    </View>
+
+
+                    <View style={estilos.conteudoBotton}>
+                      <View>
+                        <Image source={foto} style={estilos.foto} />
+                      </View>
+                      <View>
+                        <Text style={estilos.nome}>Maria Tereza</Text>
+                        <Text>São Paulo - SP</Text>
+                        <StarRatingDisplay starSize={20} starStyle={{ marginRight: -7, right: 6}}
+                          rating={4}
+                          color='#336691'
+                        />
+                      </View>
+                      <View style={estilos.saibaMais}>
+                        <MaterialIcons name="favorite-border" size={24} color="#336691" />
+                        <Text style={estilos.textoSaibaMais}>Saiba mais</Text>
+                      </View>
+                    </View>
+
+
+                    <View style={estilos.conteudoBotton}>
+                      <View>
+                        <Image source={foto} style={estilos.foto} />
+                      </View>
+                      <View>
+                        <Text style={estilos.nome}>Maria Tereza</Text>
+                        <Text>São Paulo - SP</Text>
+                        <StarRatingDisplay starSize={20} starStyle={{ marginRight: -7, right: 6}}
+                          rating={4}
+                          color='#336691'
+                        />
+                      </View>
+                      <View style={estilos.saibaMais}>
+                        <MaterialIcons name="favorite-border" size={24} color="#336691" />
+                        <Text style={estilos.textoSaibaMais}>Saiba mais</Text>
+                      </View>
+                    </View>
+
                   </View>
                   </BottomSheetScrollView>
             </BottomSheet>
