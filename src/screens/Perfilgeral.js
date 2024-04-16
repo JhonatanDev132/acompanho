@@ -55,7 +55,7 @@ export default function Perfilgeral({ navigate }) {
                 personalizados e apoio durante consultas médicas.
               </Text>
 
-              <Text style={styles.idade}>Idade: 30 anos</Text>
+              <Text style={styles.idade}>Idade: 39 anos</Text>
 
               <Text style={styles.disponibilidade}>Disponibilidade:</Text>
 
