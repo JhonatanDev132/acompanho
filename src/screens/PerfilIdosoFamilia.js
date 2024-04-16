@@ -1,89 +1,47 @@
 import React, { useState } from "react";
 import { Text, StyleSheet, View, Pressable, TextInput } from "react-native";
 import SafeContainer from "../components/SafeContainer";
-import { AntDesign } from "@expo/vector-icons"; // Importe o ícone AntDesign
+import { AntDesign } from "@expo/vector-icons";
+import Perfil from "./Conta";
 
 export default function EditarPerfil({ navigation }) {
   const [aboutText, setAboutText] = useState("");
   const [address, setAddress] = useState("");
+  const [nome, setNome] = useState(""); // Adicionando estado para o nome
 
   const handleSave = () => {
     console.log("Informações do perfil salvas:", aboutText, address);
     // Aqui você pode adicionar lógica para salvar as informações em algum lugar (ex: banco de dados)
   };
 
+  // Função para mostrar o nome da pessoa cadastrada
+  const renderNome = () => {
+    return <Text style={styles.nomeText}> {nome}</Text>;
+  };
+
   return (
     <SafeContainer>
       <View style={styles.container}>
-        <View style={styles.header}>
-          <Text style={styles.perfil}>Perfil</Text>
-          <Pressable onPress={handleSave}>
-            <Text style={styles.saveText}>Salvar</Text>
-          </Pressable>
-        </View>
-
         {/* Seção para a foto do perfil */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Foto do Perfil</Text>
           {/* Adicionando o ícone de câmera */}
-          <View style={styles.profileImage}>
-            <AntDesign name="camerao" size={24} color="black" />
+          <View style={styles.profileImageContainer}>
+            <AntDesign name="camerao" size={70} color="black" />
           </View>
+          <Text style={styles.sectionTitle}>Foto do Perfil</Text>
         </View>
-
-        <View style={styles.divider}></View>
 
         {/* Seção para "Sobre Nós" */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Sobre Nós</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Digite algo sobre você"
-            multiline={true}
-            numberOfLines={4}
-            onChangeText={(text) => setAboutText(text)}
-            value={aboutText}
-          />
+          <Text>
+            Conte um pouco sobre a família, para que os cuidadores possam
+            conhece-los.
+          </Text>
         </View>
 
-        <View style={styles.divider}></View>
-
-        {/* Seção para o endereço */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Endereço</Text>
-          <TextInput
-            style={styles.input}
-            placeholder="Digite seu endereço"
-            onChangeText={(text) => setAddress(text)}
-            value={address}
-          />
-        </View>
-
-        <View style={styles.divider}></View>
-
-        {/* Opções para locomoção do idoso */}
-        <Text style={styles.boldText}>Para locomoção o idoso utiliza:</Text>
-        <View style={styles.checkboxContainer}>
-          <View style={styles.checkboxItem}>
-            <Text>Cadeira de rodas</Text>
-            <Pressable style={styles.checkbox}></Pressable>
-          </View>
-          <View style={styles.checkboxItem}>
-            <Text>Cadeira de rodas motorizada</Text>
-            <Pressable style={styles.checkbox}></Pressable>
-          </View>
-          <View style={styles.checkboxItem}>
-            <Text>Bengala</Text>
-            <Pressable style={styles.checkbox}></Pressable>
-          </View>
-          <View style={styles.checkboxItem}>
-            <Text>Andador</Text>
-            <Pressable style={styles.checkbox}></Pressable>
-          </View>
-          <View style={styles.checkboxItem}>
-            <Text>Muleta</Text>
-            <Pressable style={styles.checkbox}></Pressable>
-          </View>
+        <View style={styles.experienciaCaixa}>
+          <Text style={styles.experiencia}>Experiência</Text>
         </View>
       </View>
     </SafeContainer>
@@ -93,63 +51,50 @@ export default function EditarPerfil({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
-    backgroundColor: "#f4fafe", // Cor de fundo para simular o gradiente
-  },
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "center",
     alignItems: "center",
-    marginBottom: 20,
-  },
-  perfil: {
-    fontSize: 24,
-    fontWeight: "bold",
-  },
-  saveText: {
-    color: "#4CAF50",
-    fontSize: 16,
   },
   section: {
+    alignItems: "center",
+  },
+  profileImageContainer: {
     marginBottom: 20,
+    marginTop: -190,
+    borderWidth: 10, // Adicionando borda
+    borderColor: "#336691", // Cor da borda
+    borderRadius: 10, // Raio da borda
+    padding: 5, // Espaçamento interno
   },
   sectionTitle: {
     fontSize: 18,
     fontWeight: "bold",
-    marginBottom: 10,
+    marginTop: -20,
   },
   input: {
     borderWidth: 1,
-    borderColor: "#CCCCCC",
-    padding: 10,
+    borderColor: "#ccc",
     borderRadius: 5,
+    padding: 10,
+    marginVertical: 10,
+    width: "80%",
   },
-  divider: {
-    height: 1,
-    backgroundColor: "#CCCCCC",
-    marginVertical: 20,
+  firstInput: {
+    borderWidth: 2, // Aumentando a largura da borda para o primeiro TextInput
   },
-  boldText: {
-    fontWeight: "bold",
+  nomeText: {
+    fontSize: 16,
     marginBottom: 10,
   },
-  checkboxContainer: {
-    flexDirection: "column",
-  },
-  checkboxItem: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 5,
-  },
-  checkbox: {
-    width: 20,
-    height: 20,
-    borderWidth: 1,
-    borderColor: "#000",
-    marginRight: 100,
-  },
-  profileImage: {
-    // Estilos para a imagem do perfil
-    // Aqui você pode adicionar estilos para a visualização da imagem do perfil
+  experienciaCaixa: {
+    flexDirection: "row", // Alinha os itens em uma linha
+    alignItems: "center", // Alinha os itens ao centro verticalmente
+    justifyContent: "space-between", // Espaço entre os itens
+    borderRadius: 10,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "#3079B5",
+    padding: 10,
+    marginTop: 20,
   },
 });

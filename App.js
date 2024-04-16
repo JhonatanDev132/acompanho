@@ -1,4 +1,11 @@
-import { SafeAreaView, StatusBar, StyleSheet } from "react-native";
+import React from "react";
+import {
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+} from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Inicio from "./src/screens/Inicio";
@@ -80,7 +87,46 @@ export default function App() {
           <Stack.Screen
             name="PerfilIdosoFamilia"
             component={PerfilIdosoFamilia}
-            options={{ headerShown: false }}
+            options={({ navigation }) => ({
+              title: "Perfil",
+              headerStyle: { backgroundColor: "#B8CDE2" },
+
+              headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
+              headerLeft: () => (
+                <TouchableOpacity
+                  style={{ marginLeft: 10 }}
+                  onPress={() => {
+                    // Adicione a lógica para voltar à tela anterior aqui
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: 18,
+                      color: "#030303",
+                    }}
+                  ></Text>
+                </TouchableOpacity>
+              ),
+              headerRight: () => (
+                <TouchableOpacity
+                  style={{ marginRight: 10 }}
+                  onPress={() => {
+                    // Adicione a lógica para salvar aqui
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontWeight: "bold",
+                      fontSize: 18,
+                      color: "#336691",
+                    }}
+                  >
+                    Salvar
+                  </Text>
+                </TouchableOpacity>
+              ),
+            })}
           />
         </Stack.Navigator>
       </NavigationContainer>
