@@ -38,7 +38,6 @@ export default function Cadastro({ navigation }) {
         email: email, 
       });
       console.log("Document written with ID: ", docRef.id);
-      alert("Usuário criado com sucesso");
 
 
       Alert.alert("Cadastro", "Seu cadastro foi concluído com sucesso!", [
@@ -123,7 +122,7 @@ const styles = StyleSheet.create({
   },
   botao: {
     backgroundColor: "#6D9DC5",
-    width: 120,
+    width: 130,
     padding: 10,
     borderRadius: 50,
     marginTop: 30

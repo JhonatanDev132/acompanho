@@ -13,9 +13,8 @@ import Escolha from "./src/screens/Escolha";
 import Home from "./src/screens/Home";
 import Perfil from "./src/screens/Perfil";
 import Mensagem from "./src/screens/Mensagem";
-import Inicadastro from "./src/screens/Inicadastro";
 import Cadastro from "./src/screens/Cadastro";
-
+import Chat from "./src/screens/Chat";
 
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -25,7 +24,7 @@ const Tab = createBottomTabNavigator();
 
 function StackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Cadastro">
+    <Stack.Navigator initialRouteName="Inicio">
     <Stack.Screen
       name="Login"
       component={Login}
@@ -66,6 +65,11 @@ function StackNavigator() {
       component={Cadastro}
       options={{ headerShown: false }}
     />
+    <Stack.Screen
+      name="Chat"
+      component={Chat}
+      options={{ headerShown: false }}
+    />
   </Stack.Navigator>
   )
 }
@@ -73,7 +77,7 @@ function StackNavigator() {
 function TabNavigator() {
   return (
     
-    <Tab.Navigator
+    <Tab.Navigator initialRouteName="Home"
       screenOptions={{
         tabBarActiveBackgroundColor: "#FAFAFA",
         tabBarInactiveBackgroundColor: "#FAFAFA",
@@ -102,7 +106,7 @@ function TabNavigator() {
       name="Mensagem" 
       component={Mensagem} 
       options={{ 
-        headerShown: true,
+        headerShown: false,
         tabBarIcon: () => {
           return <Ionicons name="chatbubble-ellipses-outline" size={24} color="#737373" />
         },
@@ -118,7 +122,7 @@ export default function App() {
     <>
       <StatusBar barStyle="light-content" />
       <NavigationContainer>
-        <StackNavigator/>
+        <TabNavigator/>
       </NavigationContainer>
     </>
   );
