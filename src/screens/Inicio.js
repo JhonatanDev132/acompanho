@@ -17,7 +17,7 @@ export default function Inicio({ navigation }) {
           </Text>
           <Pressable
             style={estilos.botao}
-            onPress={() => navigation.navigate("Escolha")}
+            onPress={() => navigation.navigate("Procurar")}
           >
             <Text style={estilos.textoBotao}>Início</Text>
           </Pressable>

@@ -1,7 +1,4 @@
 import {
-  Image,
-  Pressable,
-  SafeAreaView,
   StatusBar,
   StyleSheet,
   Text,
@@ -10,7 +7,6 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import { AntDesign } from "@expo/vector-icons";
 import Inicio from "./src/screens/Inicio";
 import Login from "./src/screens/Login";
 import Procurar from "./src/screens/Procurar";
@@ -34,26 +30,26 @@ const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 /* Função para colocar icone na parte perfil . Tipo header do Perfil Cuidador */
-function TituloCabecalhoPerfil() {
-  return (
-    <View style={styles.containerTituloCabecalho}>
-      <View style={styles.containerTituloCabecalhoEsquerda}>
-        {/* Botão para voltar para favoritos */}
+// function TituloCabecalhoPerfil() {
+//   return (
+//     <View style={styles.containerTituloCabecalho}>
+//       <View style={styles.containerTituloCabecalhoEsquerda}>
+//         {/* Botão para voltar para favoritos */}
 
-        <Text style={styles.titulo}>Perfil</Text>
-      </View>
+//         <Text style={styles.titulo}>Perfil</Text>
+//       </View>
 
-      <View style={styles.containerTituloCabecalhoDireita}>
-        <AntDesign name="sharealt" size={25} color="#030303" />
-        <AntDesign name="hearto" size={25} color="#336691" />
-      </View>
-    </View>
-  );
-}
+//       <View style={styles.containerTituloCabecalhoDireita}>
+//         <AntDesign name="sharealt" size={25} color="#030303" />
+//         <AntDesign name="hearto" size={25} color="#336691" />
+//       </View>
+//     </View>
+//   );
+// }
 
 function StackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Mensagem">
+    <Stack.Navigator initialRouteName="Inicio">
       
     <Stack.Screen
       name="Login"

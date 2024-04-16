@@ -9,7 +9,7 @@ import mensagem from '../../assets/images/mensagem.png'
 import LinearGradientComponent from '../components/LinearGradientComponent'
 
 
-export default function Seguranca() {
+export default function Seguranca({ navigation }) {
   return (
     <SafeContainer>
       <LinearGradientComponent>
@@ -66,7 +66,7 @@ export default function Seguranca() {
 
             </View>
 
-            <Pressable style={estilos.botao}>
+            <Pressable style={estilos.botao} onPress={() => navigation.navigate("Escolha")}>
               <Text style={estilos.textoBotao}>
                 Continuar
               </Text>

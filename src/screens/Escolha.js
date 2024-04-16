@@ -9,17 +9,9 @@ import {
 import SafeContainer from "../components/SafeContainer";
 import ilustracaoEscolha from "../../assets/images/ilustracao-escolha.png";
 import LinearGradientComponent from "../components/LinearGradientComponent";
-import React, { useState } from "react";
+import React from "react";
 
 export default function Escolha({ navigation }) {
-  const cuidador = () => {
-    navigation.navigate("Inicadastro", { escolha: "Cuidador" });
-  };
-
-  const usuario = () => {
-    navigation.navigate("Inicadastro", { escolha: "Usuario" });
-  };
-
   return (
     <SafeContainer>
       <LinearGradientComponent>
@@ -29,14 +21,14 @@ export default function Escolha({ navigation }) {
           </View>
           <Pressable
             style={estilos.botao}
-            onPress={() => navigation.navigate("Inicadastro")}
+            onPress={() => navigation.navigate("Cadastro")}
           >
             <Text style={estilos.textoBotao}>Sou um cuidador</Text>
           </Pressable>
           <Text style={{ fontWeight: "bold" }}>Ou</Text>
           <Pressable
             style={estilos.botao}
-            onPress={() => navigation.navigate("Inicadastro")}
+            onPress={() => navigation.navigate("Cadastro")}
           >
             <Text style={estilos.textoBotao}>Estou à procura de um cuidador</Text>
           </Pressable>
