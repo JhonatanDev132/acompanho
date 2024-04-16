@@ -81,10 +81,25 @@ export default function Perfilgeral() {
                 />
               </View>
 
-              <Text style={styles.certificados}>Certificados:</Text>
+              <Text style={styles.certificados}>Certificados concedidos:</Text>
               <Text style={styles.certificadosTexto}>
                 Verificado por Acompanho
               </Text>
+
+              <Text style={styles.certificadosNecessarios}>
+                Antecedentes Criminais
+              </Text>
+              <Text style={styles.certificadosNecessarios}>
+                Cuidador de idosos
+              </Text>
+              <Text style={styles.certificadosNecessarios}>
+                Primeiros socorros
+              </Text>
+
+              <View style={styles.experienciaCaixa}>
+                <Text style={styles.experiencia}>Experiência</Text>
+                <Text style={styles.experienciaTempo}> 2 anos</Text>
+              </View>
             </View>
           </ScrollView>
         </LinearGradientComponent>
@@ -211,6 +226,48 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontFamily: "Montserrat",
     color: "#737373",
+  },
+
+  certificadosNecessarios: {
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: "#6D9DC5",
+    backgroundColor: "#FAFAFA",
+    padding: 5,
+    marginTop: 10,
+    elevation: 2, // Elevação para Android
+    shadowColor: "#000", // Cor da sombra para iOS
+    fontFamily: "Montserrat",
+    color: "#333",
+    fontSize: 14,
+    width: 200,
+    color: "#030303",
+  },
+
+  experiencia: {
+    fontWeight: "700",
+    color: "#333",
+    fontSize: 16,
+    fontFamily: "Montserrat",
+  },
+
+  experienciaTempo: {
+    fontSize: 14,
+    fontFamily: "Montserrat",
+    color: "#737373",
+  },
+
+  experienciaCaixa: {
+    flexDirection: "row", // Alinha os itens em uma linha
+    alignItems: "center", // Alinha os itens ao centro verticalmente
+    justifyContent: "space-between", // Espaço entre os itens
+    borderRadius: 10,
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: "#3079B5",
+    padding: 10,
+    marginTop: 20,
   },
 });
 
