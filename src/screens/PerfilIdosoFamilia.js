@@ -16,7 +16,7 @@ export default function EditarPerfil({ navigation }) {
     <SafeContainer>
       <View style={styles.container}>
         <View style={styles.header}>
-          <Text style={styles.perfil}>perfil</Text>
+          <Text style={styles.perfil}>Perfil</Text>
           <Pressable onPress={handleSave}>
             <Text style={styles.saveText}>Salvar</Text>
           </Pressable>
