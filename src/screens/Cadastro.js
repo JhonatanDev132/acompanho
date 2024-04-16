@@ -7,6 +7,12 @@ import { auth } from "../../firebase.config";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import logoMini from "../../assets/images/logoMini.png"
 
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import app from '../../firebase.config';
+
+const db = getFirestore(app);
+console.log("Db is", db);
+
 export default function Cadastro({ navigation }) {
   const [nome, setNome] = useState("")
   const [email, setEmail] = useState("")
@@ -18,6 +24,7 @@ export default function Cadastro({ navigation }) {
       return;
     }
 
+
     try {
 
       const contaUsuario = await createUserWithEmailAndPassword(auth, email, senha)
@@ -25,6 +32,13 @@ export default function Cadastro({ navigation }) {
       if(contaUsuario.user) {
         await updateProfile(auth.currentUser, { displayName: nome });
       }
+
+      const docRef = await addDoc(collection(db, "usuario"), {
+        nome: nome,
+        email: email, 
+      });
+      console.log("Document written with ID: ", docRef.id);
+      alert("Usuário criado com sucesso");
 
 
       Alert.alert("Cadastro", "Seu cadastro foi concluído com sucesso!", [
@@ -39,6 +53,7 @@ export default function Cadastro({ navigation }) {
           onPress: () => navigation.replace("HomeScreen")
         }
       ])
+
 
     } catch (error) {
     console.error(error.code);
@@ -59,7 +74,8 @@ export default function Cadastro({ navigation }) {
     }
     Alert.alert("Ops!", mensagem);
     }
-  }
+    
+  };
 
   return (
     <SafeContainer>
