@@ -4,10 +4,14 @@ import React from "react";
 
 export default function Excluirconta() {
   return (
-    <View>
-      <Text>Excluirconta</Text>
+    <View style={styles.teste}>
+      <Text>Excluircontaaaaaaa</Text>
     </View>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  teste: {
+    flex: 1,
+  },
+});
