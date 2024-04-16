@@ -15,8 +15,8 @@ import LinearGradientComponent from "../components/LinearGradientComponent";
 export default function Favoritos({ navigation }) {
   return (
     <SafeContainer>
-      <View style={styles.container}>
-        <LinearGradientComponent>
+      <LinearGradientComponent>
+        <View style={styles.container}>
           <ScrollView showsVerticalScrollIndicator={false}>
             {/* Perfil 1 */}
             <View style={styles.caixa}>
@@ -118,8 +118,8 @@ export default function Favoritos({ navigation }) {
               </View>
             </View>
           </ScrollView>
-        </LinearGradientComponent>
-      </View>
+        </View>
+      </LinearGradientComponent>
     </SafeContainer>
   );
 }
@@ -128,7 +128,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#fff",
     width: "100%",
     alignItems: "center", // Centraliza horizontalmente
   },
