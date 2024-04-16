@@ -46,7 +46,7 @@ function TituloCabecalhoPerfil() {
 
 function StackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Favoritos">
+    <Stack.Navigator initialRouteName="Excluirconta">
       <Stack.Screen
         name="Login"
         component={Login}
