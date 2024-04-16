@@ -1,5 +1,5 @@
 //atalho: rnfs
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import SafeContainer from "../components/SafeContainer";
 import { ScrollView } from "react-native-gesture-handler";
@@ -11,7 +11,7 @@ import { CheckBox } from "react-native-elements"; // Importe o CheckBox da bibli
 import fotoPerfil1 from "../../assets/images/foto-perfil-1.png";
 import LinearGradientComponent from "../components/LinearGradientComponent";
 
-export default function Perfilgeral() {
+export default function Perfilgeral({ navigate }) {
   const [manha, setManha] = useState(true); // Inicializado como true
   const [tarde, setTarde] = useState(true); // Inicializado como true
   const [noite, setNoite] = useState(false);
@@ -112,6 +112,20 @@ export default function Perfilgeral() {
               </View>
             </View>
           </ScrollView>
+          <View style={styles.caixa2}>
+            <View style={styles.valorHora}>
+              <Text style={styles.experiencia}>R$ 10,00</Text>
+              <Text style={styles.experienciaTempo}> Valor por hora</Text>
+            </View>
+            <View style={styles.botaoEntreContato}>
+              <Pressable
+                style={styles.botao}
+                // onPress={() => navigation.navigate("Escolha")}
+              >
+                <Text style={styles.textoBotao}>Entre em contato</Text>
+              </Pressable>
+            </View>
+          </View>
         </LinearGradientComponent>
       </View>
     </SafeContainer>
@@ -291,6 +305,42 @@ const styles = StyleSheet.create({
     borderBottomColor: "#3079B5",
     padding: 10,
     marginTop: 20,
+  },
+
+  caixa2: {
+    width: "100%",
+    backgroundColor: "#D0DDEC",
+    height: 90,
+    flexDirection: "row",
+    justifyContent: "space-between", // Centraliza verticalmente os elementos filhos
+    alignItems: "center",
+  },
+
+  botao: {
+    backgroundColor: "#6D9DC5",
+    padding: 15,
+    borderRadius: 40,
+    width: 200,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+    marginLeft: 20,
+  },
+  textoBotao: {
+    fontSize: 18,
+    textAlign: "center",
+    fontFamily: "Montserrat",
+  },
+  valorHora: {
+    marginLeft: 10,
+  },
+  botaoEntreContato: {
+    marginRight: 10,
   },
 });
 

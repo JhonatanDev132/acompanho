@@ -12,7 +12,7 @@ import fotoPerfil2 from "../../assets/images/foto-perfil-2.png";
 import fotoPerfil3 from "../../assets/images/foto-perfil-3.png";
 import LinearGradientComponent from "../components/LinearGradientComponent";
 
-export default function Favoritos() {
+export default function Favoritos({ navigation }) {
   return (
     <SafeContainer>
       <View style={styles.container}>
@@ -45,7 +45,7 @@ export default function Favoritos() {
 
                 <Pressable
                   style={styles.botaoSaibaMais}
-                  //onPress={}
+                  onPress={() => navigation.navigate("Perfilgeral")}
                 >
                   <Text style={styles.textoBotao}>Saiba Mais</Text>
                 </Pressable>

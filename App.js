@@ -31,11 +31,6 @@ function TituloCabecalhoPerfil() {
     <View style={styles.containerTituloCabecalho}>
       <View style={styles.containerTituloCabecalhoEsquerda}>
         {/* Botão para voltar para favoritos */}
-        <Pressable
-        //onPress={}
-        >
-          <AntDesign name="left" size={25} color="#030303" />
-        </Pressable>
         <Text style={styles.titulo}>Perfil</Text>
       </View>
 
@@ -49,7 +44,7 @@ function TituloCabecalhoPerfil() {
 
 function StackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Perfilgeral">
+    <Stack.Navigator initialRouteName="Favoritos">
       <Stack.Screen
         name="Login"
         component={Login}
