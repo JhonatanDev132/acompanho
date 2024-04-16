@@ -34,13 +34,13 @@ function TituloCabecalhoPerfil() {
         <Pressable
         //onPress={}
         >
-          <AntDesign name="left" size={20} color="black" />
+          <AntDesign name="left" size={25} color="#030303" />
         </Pressable>
         <Text style={styles.titulo}>Perfil</Text>
       </View>
 
       <View style={styles.containerTituloCabecalhoDireita}>
-        <AntDesign name="sharealt" size={25} color="black" />
+        <AntDesign name="sharealt" size={25} color="#030303" />
         <AntDesign name="hearto" size={25} color="#336691" />
       </View>
     </View>
@@ -49,7 +49,7 @@ function TituloCabecalhoPerfil() {
 
 function StackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Favoritos">
+    <Stack.Navigator initialRouteName="Perfilgeral">
       <Stack.Screen
         name="Login"
         component={Login}
@@ -165,6 +165,7 @@ const styles = StyleSheet.create({
   titulo: {
     fontWeight: "bold",
     fontSize: 24,
+    color: "#030303",
   },
   containerTituloCabecalhoEsquerda: {
     flexDirection: "row",
