@@ -1,22 +1,28 @@
 import React, { useState } from "react";
-import { Text, StyleSheet, View, Pressable, TextInput } from "react-native";
+import { Text, StyleSheet, View, TextInput } from "react-native";
 import SafeContainer from "../components/SafeContainer";
 import { AntDesign } from "@expo/vector-icons";
-import Perfil from "./Conta";
+import { EvilIcons } from "@expo/vector-icons";
 
 export default function EditarPerfil({ navigation }) {
   const [aboutText, setAboutText] = useState("");
   const [address, setAddress] = useState("");
+  const [idade, setIdade] = useState(""); // Estado para a idade do idoso
   const [nome, setNome] = useState(""); // Adicionando estado para o nome
 
   const handleSave = () => {
-    console.log("Informações do perfil salvas:", aboutText, address);
+    console.log("Informações do perfil salvas:", aboutText, address, idade);
     // Aqui você pode adicionar lógica para salvar as informações em algum lugar (ex: banco de dados)
   };
 
   // Função para mostrar o nome da pessoa cadastrada
   const renderNome = () => {
     return <Text style={styles.nomeText}> {nome}</Text>;
+  };
+
+  // Função para contar os caracteres
+  const countCharacters = (text) => {
+    return text.length;
   };
 
   return (
@@ -33,15 +39,71 @@ export default function EditarPerfil({ navigation }) {
 
         {/* Seção para "Sobre Nós" */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Sobre Nós</Text>
-          <Text>
+          <Text
+            style={[
+              styles.sectionTitle,
+              { color: "#E2725B", fontWeight: "bold" },
+            ]}
+          >
+            Sobre Nós
+          </Text>
+          <Text style={styles.sobreNosText}>
             Conte um pouco sobre a família, para que os cuidadores possam
             conhece-los.
           </Text>
         </View>
 
-        <View style={styles.experienciaCaixa}>
-          <Text style={styles.experiencia}>Experiência</Text>
+        {/* Seção para o preenchimento de sobre nós */}
+        <View style={[styles.section, styles.sobreNosContainer]}>
+          <View style={styles.sobreNosInputContainer}>
+            <TextInput
+              style={styles.sobreNosTextInput}
+              multiline
+              placeholder="Digite algo..."
+              value={aboutText}
+              onChangeText={(text) => setAboutText(text)}
+            />
+            <Text>Caracteres: {countCharacters(aboutText)}/200</Text>
+          </View>
+          <View style={styles.sobreNosIconContainer}>
+            <EvilIcons name="pencil" size={24} color="black" />
+          </View>
+        </View>
+
+        {/* Seção para o endereço */}
+        <View style={[styles.section, styles.sobreNosContainer]}>
+          <Text
+            style={[
+              styles.sectionTitle,
+              { color: "#E2725B", fontWeight: "bold" },
+            ]}
+          >
+            Endereço
+          </Text>
+          <TextInput
+            style={styles.sobreNosTextInput}
+            placeholder="Digite o endereço..."
+            value={address}
+            onChangeText={(text) => setAddress(text)}
+          />
+        </View>
+
+        {/* Seção para a idade do idoso */}
+        <View style={[styles.section, styles.sobreNosContainer]}>
+          <Text
+            style={[
+              styles.sectionTitle,
+              { color: "#E2725B", fontWeight: "bold" },
+            ]}
+          >
+            Idade do Idoso
+          </Text>
+          <TextInput
+            style={styles.sobreNosTextInput}
+            placeholder="Digite a idade do idoso..."
+            value={idade}
+            onChangeText={(text) => setIdade(text)}
+          />
         </View>
       </View>
     </SafeContainer>
@@ -55,7 +117,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   section: {
-    alignItems: "center",
+    alignItems: "flex-start",
+    marginVertical: 10,
+    paddingHorizontal: 20,
   },
   profileImageContainer: {
     marginBottom: 20,
@@ -67,34 +131,25 @@ const styles = StyleSheet.create({
   },
   sectionTitle: {
     fontSize: 18,
-    fontWeight: "bold",
     marginTop: -20,
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 5,
-    padding: 10,
-    marginVertical: 10,
-    width: "80%",
-  },
-  firstInput: {
-    borderWidth: 2, // Aumentando a largura da borda para o primeiro TextInput
   },
   nomeText: {
     fontSize: 16,
     marginBottom: 10,
   },
-  experienciaCaixa: {
-    flexDirection: "row", // Alinha os itens em uma linha
-    alignItems: "center", // Alinha os itens ao centro verticalmente
-    justifyContent: "space-between", // Espaço entre os itens
-    borderRadius: 10,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
+  sobreNosContainer: {
+    width: "90%",
+  },
+  sobreNosInputContainer: {
     borderBottomWidth: 1,
-    borderBottomColor: "#3079B5",
-    padding: 10,
-    marginTop: 20,
+    borderBottomColor: "#000",
+    width: "100%",
+  },
+  sobreNosTextInput: {
+    height: 40,
+    width: "100%",
+  },
+  sobreNosText: {
+    textAlign: "justify",
   },
 });
