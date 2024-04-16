@@ -8,13 +8,15 @@ import { AntDesign } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { CheckBox } from "react-native-elements"; // Importe o CheckBox da biblioteca
 
-import fotoPerfil1 from "../../assets/images/foto-perfil-1.png";
+import fotoPerfil1 from "../../assets/images/foto-perfil-idoso-1.png";
 import LinearGradientComponent from "../components/LinearGradientComponent";
 
 export default function Perfilgeral() {
-  const [manha, setManha] = useState(true); // Inicializado como true
-  const [tarde, setTarde] = useState(true); // Inicializado como true
-  const [noite, setNoite] = useState(false);
+  const [motorizada, setMotorizada] = useState(false); // Inicializado como true
+  const [roda, setRoda] = useState(true); // Inicializado como true
+  const [andador, setAndador] = useState(false);
+  const [muleta, setMuleta] = useState(false);
+  const [bengala, setBengala] = useState(false);
 
   return (
     <SafeContainer>
@@ -31,8 +33,10 @@ export default function Perfilgeral() {
                   style={styles.perfil}
                 />
                 <View style={styles.nomeCidadeEstrela}>
-                  <Text style={styles.nome}>Raquel Santos</Text>
-                  <Text style={styles.cidade}>Cuidador em São Paulo - SP</Text>
+                  <Text style={styles.nome}>Jão Silva</Text>
+                  <Text style={styles.cidade}>
+                    Procura cuidador em São Paulo - SP
+                  </Text>
                 </View>
               </View>
             </View>
@@ -50,41 +54,51 @@ export default function Perfilgeral() {
               </View>
 
               <Text style={styles.sobrenos}>
-                Tenho 2 anos de experiência com idosos. Sou tranquila, empática
-                e muito atenta às necessidades individuais. Ofereço cuidados
-                personalizados e apoio durante consultas médicas.
+                Muito amigável e gosta de contar histórias engraçadas. Tem uma
+                personalidade agradável e sempre anima os outros. Tem pressão
+                alta e precisa ir ao médico com frequência. Utiliza uma cadeira
+                de rodas para se locomover.
               </Text>
 
-              <Text style={styles.idade}>Idade: 30 anos</Text>
+              <Text style={styles.idade}>Idade: 76 anos</Text>
 
-              <Text style={styles.disponibilidade}>Disponibilidade:</Text>
+              <Text style={styles.disponibilidade}>
+                Para locomoção o idoso utiliza:
+              </Text>
 
               {/* Checkboxes */}
               <View style={styles.checkboxContainer}>
                 <CheckBox
-                  title="Manhã"
-                  checked={manha}
-                  onPress={() => setManha(!manha)}
+                  title="Cadeira de roda motorizada"
+                  checked={motorizada}
+                  onPress={() => setMotorizada(!motorizada)}
                   checkedColor="#336691" // Cor de fundo quando selecionado
                 />
                 <CheckBox
-                  title="Tarde"
-                  checked={tarde}
-                  onPress={() => setTarde(!tarde)}
+                  title="Cadeira de roda comum"
+                  checked={roda}
+                  onPress={() => setRoda(!roda)}
                   checkedColor="#336691" // Cor de fundo quando selecionado
                 />
                 <CheckBox
-                  title="Noite"
-                  checked={noite}
-                  onPress={() => setNoite(!noite)}
+                  title="Andador"
+                  checked={andador}
+                  onPress={() => setAndador(!andador)}
+                  checkedColor="#336691" // Cor de fundo quando selecionado
+                />
+                <CheckBox
+                  title="Muleta"
+                  checked={muleta}
+                  onPress={() => setMuleta(!muleta)}
+                  checkedColor="#336691" // Cor de fundo quando selecionado
+                />
+                <CheckBox
+                  title="Bengala"
+                  checked={bengala}
+                  onPress={() => setBengala(!bengala)}
                   checkedColor="#336691" // Cor de fundo quando selecionado
                 />
               </View>
-
-              <Text style={styles.certificados}>Certificados:</Text>
-              <Text style={styles.certificadosTexto}>
-                Verificado por Acompanho
-              </Text>
             </View>
           </ScrollView>
         </LinearGradientComponent>
@@ -130,7 +144,7 @@ const styles = StyleSheet.create({
 
   cidade: {
     color: "#FAFAFA",
-    fontSize: 14,
+    fontSize: 11,
     fontFamily: "Montserrat",
   },
 
@@ -197,20 +211,6 @@ const styles = StyleSheet.create({
     fontFamily: "Montserrat",
     color: "#333",
     fontSize: 16,
-  },
-
-  certificados: {
-    paddingTop: 20,
-    fontWeight: "700",
-    color: "#333",
-    fontSize: 16,
-    fontFamily: "Montserrat",
-  },
-
-  certificadosTexto: {
-    fontSize: 14,
-    fontFamily: "Montserrat",
-    color: "#737373",
   },
 });
 
