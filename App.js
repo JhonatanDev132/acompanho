@@ -25,7 +25,7 @@ const Tab = createBottomTabNavigator();
 
 function StackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Inicio">
+    <Stack.Navigator initialRouteName="Mensagem">
       
     <Stack.Screen
       name="Login"
@@ -72,6 +72,12 @@ function StackNavigator() {
       component={Chat}
       options={{ headerShown: false }}
     />
+    <Stack.Screen
+      name="Mensagem"
+      component={Mensagem}
+      options={{ headerShown: false }}
+    />
+    
   </Stack.Navigator>
   )
 }
@@ -105,16 +111,7 @@ function TabNavigator() {
        return <AntDesign name="home" size={25} color="#737373" />
       }}}
       />
-      <Tab.Screen 
-      name="Mensagem" 
-      component={Mensagem} 
-      options={{ 
-        headerShown: false,
-        tabBarIcon: () => {
-          return <Ionicons name="chatbubble-ellipses-outline" size={24} color="#737373" />
-        },
-      }}
-      />
+      
     </Tab.Navigator>
   )
 }
@@ -125,7 +122,7 @@ export default function App() {
     <>
       <StatusBar barStyle="light-content" />
       <NavigationContainer>
-        <TabNavigator/>
+        <StackNavigator/>
       </NavigationContainer>
     </>
   );
