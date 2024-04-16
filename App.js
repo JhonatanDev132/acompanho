@@ -16,6 +16,7 @@ import Mensagem from "./src/screens/Mensagem";
 import Cadastro from "./src/screens/Cadastro";
 import Chat from "./src/screens/Chat";
 
+
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -25,6 +26,7 @@ const Tab = createBottomTabNavigator();
 function StackNavigator() {
   return (
     <Stack.Navigator initialRouteName="Inicio">
+      
     <Stack.Screen
       name="Login"
       component={Login}
@@ -85,6 +87,7 @@ function TabNavigator() {
         tabBarInactiveTintColor: "#737373"
       }}
     >
+
       <Tab.Screen 
       name="Perfil" 
       component={Perfil} 
