@@ -21,6 +21,7 @@ import Escolha from "./src/screens/Escolha";
 import Home from "./src/screens/Home";
 import Favoritos from "./src/screens/Favoritos";
 import Perfilgeral from "./src/screens/Perfilgeral";
+import Excluirconta from "./src/screens/Excluirconta";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -31,6 +32,7 @@ function TituloCabecalhoPerfil() {
     <View style={styles.containerTituloCabecalho}>
       <View style={styles.containerTituloCabecalhoEsquerda}>
         {/* Botão para voltar para favoritos */}
+
         <Text style={styles.titulo}>Perfil</Text>
       </View>
 
@@ -101,6 +103,17 @@ function StackNavigator() {
           headerTitle: () => <TituloCabecalhoPerfil />,
           headerStyle: { backgroundColor: "#B8CDE2" },
           headerTitleAlign: "left",
+          headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
+        }}
+      />
+
+      <Stack.Screen
+        name="Excluirconta"
+        component={Excluirconta}
+        options={{
+          title: "Conta",
+          headerStyle: { backgroundColor: "#B8CDE2" },
+          headerTitleAlign: "center",
           headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
         }}
       />
