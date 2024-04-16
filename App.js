@@ -1,8 +1,10 @@
+import React from "react";
 import {
+  SafeAreaView,
   StatusBar,
   StyleSheet,
+  TouchableOpacity,
   Text,
-  View,
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -18,6 +20,12 @@ import Perfil from "./src/screens/Perfil";
 import Mensagem from "./src/screens/Mensagem";
 import Cadastro from "./src/screens/Cadastro";
 import Chat from "./src/screens/Chat";
+import Bemvindo from "./src/screens/Bemvindo";
+import Aceitar from "./src/screens/Aceitar";
+import TermosECondicoes from "./src/screens/TermosECondicoes";
+import TelaDeResposta from "./src/screens/TelaDeResposta";
+import Conta from "./src/screens/Conta";
+import PerfilIdosoFamilia from "./src/screens/PerfilIdosoFamilia";
 
 
 import { AntDesign } from '@expo/vector-icons';
@@ -50,59 +58,59 @@ const Tab = createBottomTabNavigator();
 function StackNavigator() {
   return (
     <Stack.Navigator initialRouteName="Inicio">
-      
-    <Stack.Screen
-      name="Login"
-      component={Login}
-      options={{ headerShown: false }}
-    />
-    <Stack.Screen
-      name="Inicio"
-      component={Inicio}
-      options={{ headerShown: false }}
-    />
-    <Stack.Screen
-      name="Escolha"
-      component={Escolha}
-      options={{ headerShown: false }}
-    />
-    <Stack.Screen
-      name="Procurar"
-      component={Procurar}
-      options={{ headerShown: false }}
-    />
-    <Stack.Screen
-      name="Conectar"
-      component={Conectar}
-      options={{ headerShown: false }}
-    />
-    <Stack.Screen
-      name="Seguranca"
-      component={Seguranca}
-      options={{ headerShown: false }}
-    />
-    <Stack.Screen
-      name="HomeScreen"
-      component={TabNavigator}
-      options={{ headerShown: false }}
-    />
-    <Stack.Screen
-      name="Cadastro"
-      component={Cadastro}
-      options={{ headerShown: false }}
-    />
-    <Stack.Screen
-      name="Chat"
-      component={Chat}
-      options={{ headerShown: false }}
-    />
-    <Stack.Screen
-      name="Mensagem"
-      component={Mensagem}
-      options={{ headerShown: false }}
-    />
-    
-    <Stack.Screen
+
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Inicio"
+        component={Inicio}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Escolha"
+        component={Escolha}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Procurar"
+        component={Procurar}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Conectar"
+        component={Conectar}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Seguranca"
+        component={Seguranca}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="HomeScreen"
+        component={TabNavigator}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Cadastro"
+        component={Cadastro}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Chat"
+        component={Chat}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Mensagem"
+        component={Mensagem}
+        options={{ headerShown: false }}
+      />
+
+      <Stack.Screen
         name="Favoritos"
         component={Favoritos}
         options={{
@@ -135,13 +143,114 @@ function StackNavigator() {
           headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
         }}
       />
+
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Inicio"
+        component={Inicio}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Escolha"
+        component={Escolha}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Procurar"
+        component={Procurar}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Conectar"
+        component={Conectar}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Seguranca"
+        component={Seguranca}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Bemvindo"
+        component={Bemvindo}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Aceitar"
+        component={Aceitar}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="TermosECondicoes"
+        component={TermosECondicoes}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="TelaDeResposta"
+        component={TelaDeResposta}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Conta"
+        component={Conta}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="PerfilIdosoFamilia"
+        component={PerfilIdosoFamilia}
+        options={({ navigation }) => ({
+          title: "Perfil",
+          headerStyle: { backgroundColor: "#B8CDE2" },
+
+          headerTitleStyle: { fontWeight: "bold", fontSize: 24 },
+          headerLeft: () => (
+            <TouchableOpacity
+              style={{ marginLeft: 10 }}
+              onPress={() => {
+               return;
+              }}
+            >
+              <Text
+                style={{
+                  fontWeight: "bold",
+                  fontSize: 18,
+                  color: "#030303",
+                }}
+              ></Text>
+            </TouchableOpacity>
+          ),
+          headerRight: () => (
+            <TouchableOpacity
+              style={{ marginRight: 10 }}
+              onPress={() => {
+                return;
+              }}
+            >
+              <Text
+                style={{
+                  fontWeight: "bold",
+                  fontSize: 18,
+                  color: "#336691",
+                }}
+              >
+                Salvar
+              </Text>
+            </TouchableOpacity>
+          ),
+        })}
+      />
+
     </Stack.Navigator>
   )
 }
 
 function TabNavigator() {
   return (
-    
+
     <Tab.Navigator initialRouteName="Home"
       screenOptions={{
         tabBarActiveBackgroundColor: "#FAFAFA",
@@ -151,32 +260,34 @@ function TabNavigator() {
       }}
     >
 
-      <Tab.Screen 
-      name="Perfil" 
-      component={Perfil} 
-      options={{ 
-        headerShown: false,
-        tabBarIcon: () => {
-          return <Ionicons name="person" size={24} color="#737373" />
-        },
-      }}
+      <Tab.Screen
+        name="Perfil"
+        component={Perfil}
+        options={{
+          headerShown: false,
+          tabBarIcon: () => {
+            return <Ionicons name="person" size={24} color="#737373" />
+          },
+        }}
       />
-      <Tab.Screen 
-      name="Home" 
-      component={Home} 
-      options={{ headerShown: false, tabBarIcon: () => {
-       return <AntDesign name="home" size={25} color="#737373" />
-      }}}
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          headerShown: false, tabBarIcon: () => {
+            return <AntDesign name="home" size={25} color="#737373" />
+          }
+        }}
       />
-      <Tab.Screen 
-      name="Mensagem" 
-      component={Mensagem} 
-      options={{ 
-        headerShown: false,
-        tabBarIcon: () => {
-          return <Ionicons name="chatbubble-ellipses-outline" size={24} color="#737373" />
-        },
-      }}
+      <Tab.Screen
+        name="Mensagem"
+        component={Mensagem}
+        options={{
+          headerShown: false,
+          tabBarIcon: () => {
+            return <Ionicons name="chatbubble-ellipses-outline" size={24} color="#737373" />
+          },
+        }}
       />
     </Tab.Navigator>
   );
@@ -188,7 +299,7 @@ export default function App() {
     <>
       <StatusBar barStyle="light-content" />
       <NavigationContainer>
-        <StackNavigator/>
+        <StackNavigator />
       </NavigationContainer>
     </>
   );
